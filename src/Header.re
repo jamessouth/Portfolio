@@ -1,8 +1,8 @@
 [@react.component]
 let make = () => {
-    <header className="fixed top-0 w-full h-24 bg-pale-spring-bud z-20 exp:h-12">
-        <nav>
-            <ul className="font-corm">
+    <header className="fixed top-0 w-full h-24 bg-mid-green-yellow z-20 exp:h-12">
+        <nav className="my-0 mx-2 h-full">
+            <ul className="font-corm flex flex-row justify-around items-center flex-wrap h-full">
                 <li>
                     <a href="#about">"About"->React.string</a>
                 </li>
@@ -22,4 +22,6 @@ let make = () => {
         </nav>
     </header>
 };
-// https://coolors.co/d00000-381d2a-3e6990-aabd8c-e9e3b4
+
+
+// https://coolors.co/d00000-bdc667-77966d-626d58-413c58
