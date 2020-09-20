@@ -12,6 +12,7 @@ module.exports = {
             fontFamily: {
                 'perm': '"Permanent Marker", cursive',
                 'corm': '"Cormorant SC", serif',
+                'sche': 'Scheherazade, serif',
             },
             fontSize: {
                 'hdr': '1.3rem',
