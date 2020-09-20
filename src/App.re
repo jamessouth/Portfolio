@@ -1,7 +1,9 @@
 [@react.component]
 let make = () => {
-    <Header/>
-    // <main>
-    // <p></p>
-    // </main>;
+    <>
+        <Header/>
+        <main>
+            <About/>
+        </main>
+    </>
 };
