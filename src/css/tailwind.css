@@ -63,6 +63,10 @@
         text-shadow: 4px 6px 1px black;
         @apply font-perm text-5xl font-bold my-0 mx-2 border-double border-black border-4 pt-1 pr-5 pb-5 pl-2 float-left text-rosso-corsa bg-mid-green-yellow;
     }
+    #art0{
+        background-image: paint(art0);
+        @apply bg-red-600;
+    }
 }
 
 @tailwind components;

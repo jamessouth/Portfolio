@@ -1,9 +1,17 @@
+[%%raw {|
+CSS.paintWorklet.addModule('./art0.js')
+|}]
+
+
+
+
+
 [@react.component]
-let make = (~link, ~title) => {
+let make = (~link, ~title, ~aid) => {
 
     <div>
         <a rel="noopener noreferrer" href=link>title->React.string</a>
-        <div>
+        <div className="w-40 h-40" id=aid>
 
 
         </div>
