@@ -1,11 +1,3 @@
-[%%raw {|
-CSS.paintWorklet.addModule('./art0.js')
-|}]
-
-
-
-
-
 [@react.component]
 let make = (~link, ~title, ~aid) => {
 

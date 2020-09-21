@@ -1,3 +1,11 @@
+[%%raw {|
+if (CSS.paintWorklet) {
+    CSS.paintWorklet.addModule('./art0.js');
+    CSS.paintWorklet.addModule('./art1.js');
+}
+|}]
+
+
 [@react.component]
 let make = () => {
     <section id="articles">
