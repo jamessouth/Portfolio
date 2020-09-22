@@ -2,8 +2,16 @@
 if (CSS.paintWorklet) {
     CSS.paintWorklet.addModule('./art0.js');
     CSS.paintWorklet.addModule('./art1.js');
+    CSS.paintWorklet.addModule('./bod.js');
 }
 |}]
+
+
+
+
+
+
+
 
 
 
