@@ -65,11 +65,9 @@
     }
     #art0{
         background-image: paint(art0);
-        @apply bg-red-600;
     }
     #art1{
         background-image: paint(art1);
-        @apply bg-red-600;
     }
 }
 

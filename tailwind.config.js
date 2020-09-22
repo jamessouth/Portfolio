@@ -8,6 +8,8 @@ module.exports = {
                 'russian-green': '#77966d',
                 'ebony': '#626d58',
                 'english-violet': '#413c58',
+                'ebony-lite': '#626d5878',
+                'gy-lite': '#bdc66778',
             },
             fontFamily: {
                 'perm': '"Permanent Marker", cursive',

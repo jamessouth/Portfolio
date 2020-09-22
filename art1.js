@@ -23,7 +23,7 @@ class Art1 {
     paint(ctx, { width, height }, props) { // eslint-disable-line
       
   
-      ctx.fillStyle = 'rgb(10, 10, 10)';
+      ctx.fillStyle = 'rgb(65, 60, 88)';
       ctx.fillRect(0, 0, width, height);
   
       for (let i = 0; i < 45; i += 1) {
