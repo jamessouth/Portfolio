@@ -1,5 +1,8 @@
 @tailwind base;
 @layer base{
+    *{
+        @apply text-rich-black;
+    }
     li{
         @apply font-bold my-0 mx-2 text-hdr;
     }
@@ -11,7 +14,7 @@
         @apply no-underline border-2 border-solid border-transparent;
     }
     li a:focus{
-        @apply outline-none border-solid border-2 border-english-violet;
+        @apply outline-none border-solid border-2 border-old-lavender;
     }
     li a:hover{
         @apply underline;
@@ -41,7 +44,7 @@
         }
     }
     h2{
-        @apply text-center text-3xl m-12 font-corm;
+        @apply text-center text-3xl m-12 font-bold font-corm;
     }
     @screen md{
         h2{
@@ -60,8 +63,8 @@
         @apply mb-24;
     }
     #about > p::first-letter{
-        text-shadow: 4px 6px 1px black;
-        @apply font-perm text-5xl font-bold my-0 mx-2 border-double border-black border-4 pt-1 pr-5 pb-5 pl-2 float-left text-rosso-corsa bg-mid-green-yellow;
+        text-shadow: 4px 6px 1px #090c08;
+        @apply font-perm text-5xl font-bold my-0 mx-2 border-double border-rich-black border-4 pt-1 pr-5 pb-5 pl-2 float-left text-rosso-corsa bg-yellow-crayola;
     }
     #body{
         background-image: paint(bod);

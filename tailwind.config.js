@@ -4,12 +4,12 @@ module.exports = {
         extend: {
             colors: {
                 'rosso-corsa': '#d00000',
-                'mid-green-yellow': '#bdc667',
-                'russian-green': '#77966d',
-                'ebony': '#626d58',
-                'english-violet': '#413c58',
-                'ebony-lite': 'rgba(98, 109, 88, 0.2)',
-                'gy-lite': 'rgba(189, 198, 103, 0.3)',
+                'yellow-crayola': '#ffee88',
+                'amazon': '#52805a',
+                'rich-black': '#090c08',
+                'old-lavender': '#6a5b6e',
+                'rb-lite': 'rgba(9, 12, 8, 0.2)',
+                'yc-lite': 'rgba(255, 238, 136, 0.3)',
             },
             fontFamily: {
                 'perm': '"Permanent Marker", cursive',
