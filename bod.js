@@ -32,20 +32,8 @@ class Bod {
           default: return undefined;
         }
       }
-  
-
-      
-
-    
-    
-  
-
-      
-  
     paint(ctx, {width, height}) { // eslint-disable-line
 
-
-      
 
       for (let i = 0; i < 36; i += 1) {
 
@@ -56,7 +44,6 @@ class Bod {
         const grad = ctx.createLinearGradient(startx, starty, endx, endy);
         grad.addColorStop(0, 'rgba(82, 128, 90, .12)');
         grad.addColorStop(0.15, 'transparent');
-       
         grad.addColorStop(0.58, 'transparent');
         grad.addColorStop(0.81, 'rgba(208, 0, 0, .05)');
         grad.addColorStop(0.89, 'transparent');
