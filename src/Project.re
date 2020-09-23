@@ -11,13 +11,20 @@
 
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i) => {
+    let offset = i * -288;
     <div>
         <h3>title->React.string</h3>
         <p>tech1->React.string</p>
         <p>tech2->React.string</p>
         <div></div>
         <div>
-            <img alt=alt/>
+            <img
+            className="object-cover w-full h-full"
+            style={ReactDOMRe.Style.make(
+                ~objectPosition=offset->string_of_int ++ "px",
+                (),
+            )}
+            alt=alt/>
             <a rel="noopener noreferrer" href=code ariaLabel=codeAria>"code"->React.string</a>
             {
                 switch (live) {
