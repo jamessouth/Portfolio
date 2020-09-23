@@ -45,7 +45,7 @@ class Bod {
         grad.addColorStop(0, 'rgba(82, 128, 90, .12)');
         grad.addColorStop(0.15, 'transparent');
         grad.addColorStop(0.58, 'transparent');
-        grad.addColorStop(0.81, 'rgba(208, 0, 0, .05)');
+        grad.addColorStop(0.81, 'rgba(208, 0, 0, .04)');
         grad.addColorStop(0.89, 'transparent');
         grad.addColorStop(0.90, 'transparent');
         grad.addColorStop(1, 'rgba(255, 238, 136, .12)');

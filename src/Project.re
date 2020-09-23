@@ -1,17 +1,6 @@
-// type project = {
-//     title: string,
-//     live: option(string),
-//     code: string,
-//     alt: string,
-//     tech1: string,
-//     tech2: string,
-//     liveAria: option(string),
-//     codeAria: string,
-// };
-
 [@react.component]
-let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i) => {
-    let offset = i * -288;
+let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i, ~imgSrc) => {
+    let offset = i * -288; // each pic of the sprite is 288x288
     <div>
         <h3>title->React.string</h3>
         <p>tech1->React.string</p>
@@ -19,6 +8,7 @@ let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i
         <div></div>
         <div>
             <img
+            src=imgSrc
             className="object-cover w-full h-full"
             style={ReactDOMRe.Style.make(
                 ~objectPosition=offset->string_of_int ++ "px",
