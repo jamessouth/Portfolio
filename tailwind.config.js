@@ -21,8 +21,9 @@ module.exports = {
                 'exp': '1.7rem',
             },
             spacing: {
+                '60': '15rem',
                 'cardw': '20rem',
-                'cardh': '22rem',
+                'cardh': '26rem',
             },
             screens: {
                 'exp': '425px',

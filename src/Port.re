@@ -111,6 +111,8 @@ let projects: array(project) = [|
 
 
 
+
+
 [@react.component]
 let make = () => {
     let (state, setState) = React.useState(() => LoadingImg);
@@ -138,13 +140,13 @@ let make = () => {
 
     <section id="port">
         <h2>"Portfolio"->React.string</h2>
-        <div className="flex justify-around flex-row items-center flex-wrap w-11/12 m-auto">
+        <div className="flex justify-around flex-row items-center flex-wrap w-11/12 m-auto font-corm">
             {switch (state) {
               | LoadingImg => React.null
-              | LoadedImg(imgSrc) => 
+              | LoadedImg(src) => 
                 projects
                     ->Belt.Array.mapWithIndex((i, {title, live, code, alt, tech1, tech2, liveAria, codeAria}) =>
-                        <Project title live code alt tech1 tech2 liveAria codeAria i imgSrc key=title/>)
+                        <Project title live code alt tech1 tech2 liveAria codeAria i src key=title/>)
                     ->React.array;
               }
             }
