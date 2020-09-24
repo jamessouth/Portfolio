@@ -108,7 +108,6 @@ let projects: array(project) = [|
   },
 |];
 
-let fallback = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwBAMAAADMe/ShAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAwUExURf///wAICIy1vYy1Oim1vSm1OowxrSkxrXMxKd46vd46Ot6tvd6tOt7vhN73///v//AEph8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAANeSURBVHja7ZrBattAEIbX8kUgsDMJBEHAiXIoBkOIewr0ZfookXMJFNpXidNLIdBnsd1LIZf0BUplx5Z2ZlfKxtZqD/2/U+yM9pN2V6vRrBUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBmqMCR0oYLQoyMVhIxuVRDyQF2dEKkgxHSsgjAPNbcwxF2xpHMVhCldqxAMiBa+2l7dE9Hdlf2fEaX8i+HjTU5r7meT95xSTBWbJTjJt59m1vg/NGKfP+RaAzR72Fu80lqxxfMnRDIlwWRP8S+SPSAg0i5q0zvp7Onv87g86Mte4oidfWqGsyEerL2fXv+uzvjrHuJI9Jt5yT06qz5kuqbq9It3i0c5pROt1yxrlD7E69OsTmPZcNRb4qJziwEcavPUuD/0J8S8iF/YGnKa2ly8aXVKtb3GhriI+2ZtyCkzYuLXdrL6JtgTIqP0xdqQU1/r4hMlxfKRn+nfxGwC97UBc/Dq8bvr08QjEc2TgKe6hg4Xn/HgpiRAb8hlzdbjt8+7ee1oNSUB+hrgMq2j94ib8jy9IZclpFl8woOb8rx2xXx+Jk2j51Mcyx4oWF3e3F3+PFB88YZ4adxej9vlNb2yXUFr4qlcyX5UkbO+P/FA3ieatwj1J5Z5XnmNH5+/s8yLPrcr7vGFrMwKT5VMvloWi0pAGTba/tebmA9xUgYdGQ21KxZDvOxM3OMrdzWdbj2L+RBrx/kW8yeEkWL1fYkjngQsDxX3XcUiCcg6E4skIG8SuyyZzmKRBHQmLtaLF/04OlQcO4plEtCZeC6SgLwrcS6SAB/izCI2koCuxH35QpT5FZ/uwpbybaZx5XLJMh3FxnZA7Fe869+h8T4U+e3qtNQY77xSbFTqWhH3zNfETGhyL2LLjk/VtZuHB8ux2xPb5kt5iev5ziqCTpsWTuLIVgkoj0wfBmP+JiFuvTfF13VieyWAvT0c6w25lH2cxJm18/SsKV3oDbmUfSx3gSmuqQT8LuNOHnjBzGEF6ZniqRTXFnt2U2omrqCtLbH6Yk8yzim9M4s8L+2I56F2fPJAOz6Jxx2fRmzFnk4wiz0dMQ30m4ChY62/dSK3wnf7BNswjkP97ENdKgAAAAAAAAAAAAAAAAAAAAAAAAAAAMD/gVL/AD6jHEm7rYqjAAAAAElFTkSuQmCC";
 
 
 
@@ -118,23 +117,18 @@ let make = () => {
 
     React.useEffect0(() => {
       Js.Promise.(
-        fetch("./src/assets/ports8prite.jpg")
+        fetch("./src/assets/portsprite.jpg")
           |>then_(response => {
-            if (response##ok) {
-              response##url;
-            } else {
-              _ => Js.Promise.reject;
-              ()
-            }
-            Js.log(response)
-            })
-          |>then_(imgURL => {
-            Js.log("goood")
-              setState(_previousState => LoadedImg(imgURL));
+              if (response##ok) {
+                setState(_previousState => LoadedImg(response##url));
+              } else {
+                setState(_previousState => LoadedImg(""));
+                Js.log("failed to fetch " ++ response##url);
+              }
               Js.Promise.resolve();
-          })
+            })
           |>catch(_err => {
-            setState(_previousState => LoadedImg(fallback));
+            Js.log2("failed to fetch: ", _err);
             Js.Promise.resolve();
           })
           |>ignore
@@ -144,7 +138,7 @@ let make = () => {
 
     <section id="port">
         <h2>"Portfolio"->React.string</h2>
-        <div>
+        <div className="flex justify-around flex-row items-center flex-wrap w-11/12 m-auto">
             {switch (state) {
               | LoadingImg => React.null
               | LoadedImg(imgSrc) => 

@@ -20,6 +20,10 @@ module.exports = {
                 'hdr': '1.3rem',
                 'exp': '1.7rem',
             },
+            spacing: {
+                'cardw': '20rem',
+                'cardh': '22rem',
+            },
             screens: {
                 'exp': '425px',
             },

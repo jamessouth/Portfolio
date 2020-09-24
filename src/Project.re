@@ -1,7 +1,7 @@
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i, ~imgSrc) => {
     let offset = i * -288; // each pic of the sprite is 288x288
-    <div>
+    <div className="w-cardw h-cardh bg-yellow-crayola m-6">
         <h3>title->React.string</h3>
         <p>tech1->React.string</p>
         <p>tech2->React.string</p>

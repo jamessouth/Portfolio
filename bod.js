@@ -35,17 +35,17 @@ class Bod {
     paint(ctx, {width, height}) { // eslint-disable-line
 
 
-      for (let i = 0; i < 36; i += 1) {
+      for (let i = 0; i < 35; i += 1) {
 
         
         const [startx, starty] = Bod.getPoint(i%4, width, height);
         const [endx, endy] = Bod.getPoint((i+1)%4, width, height);
         
         const grad = ctx.createLinearGradient(startx, starty, endx, endy);
-        grad.addColorStop(0, 'rgba(82, 128, 90, .12)');
+        grad.addColorStop(0, 'rgba(208, 0, 0, .04)');
         grad.addColorStop(0.15, 'transparent');
         grad.addColorStop(0.58, 'transparent');
-        grad.addColorStop(0.81, 'rgba(208, 0, 0, .04)');
+        grad.addColorStop(0.81, 'rgba(106, 91, 110, .08)');
         grad.addColorStop(0.89, 'transparent');
         grad.addColorStop(0.90, 'transparent');
         grad.addColorStop(1, 'rgba(255, 238, 136, .12)');
