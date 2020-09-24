@@ -75,6 +75,9 @@
     #art1{
         background-image: paint(art1);
     }
+    .cardbg{
+        background: radial-gradient(transparent 20%, #ffee88 40%, transparent);
+    }
 }
 
 @tailwind components;
