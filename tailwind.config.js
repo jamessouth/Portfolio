@@ -2,6 +2,11 @@ module.exports = {
     purge: [],
     theme: {
         extend: {
+            backgroundImage: {
+                'pe': "url('https://projecteuler.net/profile/jamessouth.png')",
+                'cw': "url('https://www.codewars.com/users/jamessouth/badges/micro')",
+                'cw-lg': "url('https://www.codewars.com/users/jamessouth/badges/large')",
+            },
             colors: {
                 'rosso-corsa': '#d00000',
                 'yellow-crayola': '#ffee88',
@@ -23,6 +28,7 @@ module.exports = {
             spacing: {
                 '60': '15rem',
                 'cardw': '20rem',
+                'cw-lg': '25rem',
                 'cardh': '26rem',
             },
             screens: {
