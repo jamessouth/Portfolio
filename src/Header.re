@@ -16,7 +16,7 @@ let make = () => { //caba99
                     <a href="#cont">"Contact"->React.string</a>
                 </li>
                 <li>
-                    <a target="_blank" rel="noopener noreferrer" >{js|Résumé|js}->React.string</a>
+                    <a className="newwindow" target="_blank" rel="noopener noreferrer" >{js|Résumé|js}->React.string</a>
                 </li>
             </ul>
         </nav>

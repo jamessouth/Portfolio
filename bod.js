@@ -42,13 +42,15 @@ class Bod {
         const [endx, endy] = Bod.getPoint((i+1)%4, width, height);
         
         const grad = ctx.createLinearGradient(startx, starty, endx, endy);
-        grad.addColorStop(0, 'rgba(208, 0, 0, .04)');
+        grad.addColorStop(0, 'rgba(208, 0, 0, .05)');
         grad.addColorStop(0.15, 'transparent');
-        grad.addColorStop(0.58, 'transparent');
-        grad.addColorStop(0.81, 'rgba(106, 91, 110, .08)');
+        grad.addColorStop(0.68, 'transparent');
+        grad.addColorStop(0.81, 'rgba(106, 91, 110, .07)');
         grad.addColorStop(0.89, 'transparent');
         grad.addColorStop(0.90, 'transparent');
-        grad.addColorStop(1, 'rgba(255, 238, 136, .12)');
+        grad.addColorStop(0.95, 'rgba(255, 238, 136, .12)');
+        grad.addColorStop(1, 'rgba(255, 238, 136, .13)');
+        ctx.globalCompositeOperation = 'color-burn';
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, width, height);
 

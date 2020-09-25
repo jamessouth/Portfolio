@@ -7,6 +7,13 @@ type contact = {
     w: int,
 };
 
+
+
+
+
+
+
+
 type state =
 | LoadingImg
 | LoadedImg(string);
@@ -94,12 +101,12 @@ let make = () => {
                     ->React.array;
               }
             }
-            <div className="bg-pe bg-no-repeat bg-center bg-cover m-8 border-2 border-solid border-transparent w-56 h-16">
-                <a ariaLabel="go to project euler" rel="noopener noreferrer" href="https://projecteuler.net"></a>
-            </div>
-            <div className="bg-cw lg:bg-cw-lg bg-no-repeat bg-center bg-cover m-8 border-2 border-solid border-transparent w-48 h-8 lg:w-cw-lg lg:h-10">
-                <a ariaLabel="go to my codewars profile" rel="noopener noreferrer" href="https://www.codewars.com/users/jamessouth"></a>
-            </div>
+            // <div className="bg-pe bg-no-repeat bg-center bg-cover m-8 border-2 border-solid border-transparent w-56 h-16">
+            //     <a ariaLabel="go to project euler" rel="noopener noreferrer" href="https://projecteuler.net"></a>
+            // </div>
+            // <div className="bg-cw lg:bg-cw-lg bg-no-repeat bg-center bg-cover m-8 border-2 border-solid border-transparent w-48 h-8 lg:w-cw-lg lg:h-10">
+            //     <a ariaLabel="go to my codewars profile" rel="noopener noreferrer" href="https://www.codewars.com/users/jamessouth"></a>
+            // </div>
         </div>
     </section>
 };
