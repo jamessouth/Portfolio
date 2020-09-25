@@ -62,13 +62,16 @@
     section:last-of-type{
         @apply mb-24;
     }
-    #about > p::first-letter{
+    cite{
+        @apply italic;
+    }
+    #about > p:first-of-type::first-letter{
         text-shadow: 4px 6px 1px #090c08;
         @apply font-perm text-5xl font-bold my-0 mx-2 border-double border-rich-black border-4 pt-1 pr-5 pb-5 pl-2 float-left text-rosso-corsa bg-yellow-crayola;
     }
-    #body{
+    /* #body{
         background-image: paint(bod);
-    }
+    } */
     #art0{
         background-image: paint(art0);
     }

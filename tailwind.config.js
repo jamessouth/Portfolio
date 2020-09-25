@@ -25,6 +25,9 @@ module.exports = {
                 'hdr': '1.3rem',
                 'exp': '1.7rem',
             },
+            maxWidth: {
+                'harp': '1238px',
+            },
             spacing: {
                 '60': '15rem',
                 'cardw': '20rem',
