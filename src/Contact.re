@@ -91,7 +91,7 @@ let make = () => {
 
     <section id="cont">
         <h2>"Contact"->React.string</h2>
-        <div className="flex flex-row justify-around items-center flex-wrap">
+        <div className="flex flex-row justify-around items-center flex-wrap xl:m-auto max-w-cont">
             {switch (state) {
               | LoadingImg => React.null
               | LoadedImg(src) => 
@@ -101,11 +101,11 @@ let make = () => {
                     ->React.array;
               }
             }
-            // <div className="bg-pe bg-no-repeat bg-center bg-cover m-8 border-2 border-solid border-transparent w-56 h-16">
-            //     <a ariaLabel="go to project euler" rel="noopener noreferrer" href="https://projecteuler.net"></a>
+            // <div className="bg-pe bg-no-repeat bg-center bg-cover m-8 bord w-56 h-16">
+            //     <a className="h-full block bord" ariaLabel="go to project euler" rel="noopener noreferrer" href="https://projecteuler.net"></a>
             // </div>
-            // <div className="bg-cw lg:bg-cw-lg bg-no-repeat bg-center bg-cover m-8 border-2 border-solid border-transparent w-48 h-8 lg:w-cw-lg lg:h-10">
-            //     <a ariaLabel="go to my codewars profile" rel="noopener noreferrer" href="https://www.codewars.com/users/jamessouth"></a>
+            // <div className="bg-cw lg:bg-cw-lg bg-no-repeat bg-center bg-cover m-8 bord w-48 h-8 lg:w-cw-lg lg:h-10">
+            //     <a className="h-full block bord" ariaLabel="go to my codewars profile" rel="noopener noreferrer" href="https://www.codewars.com/users/jamessouth"></a>
             // </div>
         </div>
     </section>

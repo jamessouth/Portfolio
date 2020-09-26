@@ -1,6 +1,6 @@
 [@react.component]
 let make = () => { //caba99
-    <header className="fixed bg-yellow-crayola top-0 w-full h-24 z-20 exp:h-12">
+    <header className="fixed bg-lite-gold-yellow top-0 w-full h-24 z-20 exp:h-12">
         <nav className="my-0 mx-2 h-full">
             <ul className="font-corm flex flex-row justify-around items-center flex-wrap h-full">
                 <li>
@@ -22,6 +22,8 @@ let make = () => { //caba99
         </nav>
     </header>
 };
+
+
 
 
 

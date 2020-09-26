@@ -9,12 +9,13 @@ module.exports = {
             },
             colors: {
                 'rosso-corsa': '#d00000',
-                'yellow-crayola': '#ffee88',
-                'amazon': '#52805a',
-                'rich-black': '#090c08',
-                'old-lavender': '#6a5b6e',
-                'rb-lite': 'rgba(9, 12, 8, 0.2)',
-                'yc-lite': 'rgba(255, 238, 136, 0.3)',
+                'indigo-dye': '#08415c',
+                'mid-green': '#5b8c5a',
+                'lite-gold-yellow': '#fafad2',
+                'dk-sienna': '#2c0703',
+                'id-lite': 'rgba(8, 65, 92, .15)',
+                'mg-lite': 'rgba(91, 140, 90, .19)',
+                'ds-lite': 'rgba(44, 7, 3, .16)',
             },
             fontFamily: {
                 'perm': '"Permanent Marker", cursive',
@@ -27,6 +28,7 @@ module.exports = {
             },
             maxWidth: {
                 'harp': '1238px',
+                'cont': '2000px',
             },
             spacing: {
                 '60': '15rem',
