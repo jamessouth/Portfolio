@@ -26,6 +26,9 @@ module.exports = {
                 'hdr': '1.3rem',
                 'exp': '1.7rem',
             },
+            height: {
+                'half-screen': '50vh',
+            },
             maxWidth: {
                 'harp': '1238px',
                 'cont': '2000px',
@@ -37,7 +40,10 @@ module.exports = {
                 'cardh': '26rem',
             },
             screens: {
-                'exp': '425px',
+                'portrait': {
+                    'raw': '(orientation: portrait)',
+                },
+                'wdk1': '440px',
             },
         },
     },

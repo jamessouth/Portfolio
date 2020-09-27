@@ -1,5 +1,6 @@
 @tailwind base;
 @layer base{
+    /* 161616 */
     *{
         @apply text-dk-sienna;
     }
@@ -23,11 +24,11 @@
     #cont a:hover{
         @apply outline-none border-solid border-2 border-indigo-dye;
     }
-    @screen exp{
+    /* @screen exp{
         li{
             @apply m-0;
         }
-    }
+    } */
     @screen sm{
         li{
             @apply text-exp;
@@ -39,14 +40,14 @@
     #cont:target{
         @apply pt-24;
     }
-    @screen exp{
+    /* @screen exp{
         #port:target,
         #about:target,
         #articles:target,
         #cont:target{
             @apply pt-12;
         }
-    }
+    } */
     h2{
         @apply text-center text-3xl m-12 font-bold font-corm;
     }
@@ -60,18 +61,18 @@
             @apply text-5xl m-20;
         }
     }
-    section{
-        @apply relative mb-56;
+    /* section{
+        @apply mb-56;
     }
     section:last-of-type{
         @apply mb-24;
-    }
+    } */
     cite{
         @apply italic;
     }
     #about > p:first-of-type::first-letter{
-        text-shadow: 4px 6px 1px #2c0703;
-        @apply font-perm text-5xl font-bold my-0 mx-2 border-double border-dk-sienna border-4 pt-1 pr-5 pb-5 pl-2 float-left text-rosso-corsa bg-lite-gold-yellow;
+        color: #405d82;
+        @apply font-perm text-5xl font-bold -mt-16 -mb-8 -mr-4 pr-5 float-left;
     }
     /* #body{
         background-image: paint(bod);
