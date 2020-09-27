@@ -96,16 +96,6 @@ let projects: array(project) = [|
     liveAria: "live site for web dev kit project",
     codeAria: "code for web dev kit project",
   },
-  {
-    title: "vue-style-lint",
-    tech1: "node es6 fp ci tdd",
-    tech2: "npm|v1.0.3",
-    live: Some("https://www.npmjs.com/package/vue-style-lint"),
-    code: "https://github.com/jamessouth/vue-style-lint",
-    alt: "output of a computer terminal",
-    liveAria: "live site for vue-style-lint project",
-    codeAria: "code for vue-style-lint project",
-  },
 |];
 
 
@@ -140,7 +130,7 @@ let make = () => {
 
     <section id="port">
         <h2>"Portfolio"->React.string</h2>
-        <div className="flex justify-around flex-row items-center flex-wrap w-11/12 m-auto font-corm">
+        <div className="flex flex-wrap font-corm">
             {switch (state) {
               | LoadingImg => React.null
               | LoadedImg(src) => 
