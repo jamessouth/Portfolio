@@ -16,6 +16,9 @@ module.exports = {
                 'id-lite': 'rgba(8, 65, 92, .15)',
                 'mg-lite': 'rgba(91, 140, 90, .19)',
                 'ds-lite': 'rgba(44, 7, 3, .16)',
+                // oiuoiuh
+                'dark-blue': '#405d82',
+                'eerie-black': '#161616',
             },
             fontFamily: {
                 'perm': '"Permanent Marker", cursive',

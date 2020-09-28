@@ -1,8 +1,7 @@
 @tailwind base;
 @layer base{
-    /* 161616 */
     *{
-        @apply text-dk-sienna;
+        @apply text-eerie-black;
     }
     li{
         @apply font-bold my-0 mx-2 text-hdr;
@@ -15,14 +14,14 @@
         @apply no-underline border-2 border-solid border-transparent;
     }
     #about a{
-        @apply underline text-indigo-dye;
+        @apply underline text-dark-blue;
     }
     #about a:hover{
-        @apply underline bg-indigo-dye text-id-lite;
+        @apply bg-dark-blue text-white;
     }
     a:focus,
     #cont a:hover{
-        @apply outline-none border-solid border-2 border-indigo-dye;
+        @apply outline-none border-solid border-2 border-dark-blue;
     }
     /* @screen exp{
         li{
@@ -70,7 +69,7 @@
     cite{
         @apply italic;
     }
-    #about > p:first-of-type::first-letter{
+    #about div p::first-letter{
         color: #405d82;
         @apply font-perm text-5xl font-bold -mt-16 -mb-8 -mr-4 pr-5 float-left;
     }
