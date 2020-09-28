@@ -26,8 +26,8 @@ module.exports = {
                 'sche': 'Scheherazade, serif',
             },
             fontSize: {
-                'hdr': '1.3rem',
-                'exp': '1.7rem',
+                // 'hdr': '1.3rem',
+                'first-letter': '5rem',
             },
             height: {
                 'half-screen': '50vh',

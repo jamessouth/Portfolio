@@ -5,6 +5,7 @@ type project = {
     live: option(string),
     code: string,
     alt: string,
+    text: string,
     tech1: string,
     tech2: string,
     liveAria: string,
@@ -86,16 +87,6 @@ let projects: array(project) = [|
     live: None,
     liveAria: "",
   },
-  {
-    title: "web dev kit",
-    live: Some("https://chrome.google.com/webstore/detail/web-dev-kit/geedfiohcopjhgancckdfanhobhfbgmm"),
-    code: "https://github.com/jamessouth/webdevkit",
-    alt: "a laptop on a desk",
-    tech1: "javascript",
-    tech2: "chrome extension",
-    liveAria: "live site for web dev kit project",
-    codeAria: "code for web dev kit project",
-  },
 |];
 
 
@@ -129,8 +120,8 @@ let make = () => {
     });
 
     <section id="port">
-        <h2>"Portfolio"->React.string</h2>
-        <div className="flex flex-wrap font-corm">
+        // <h2>"Portfolio"->React.string</h2>
+        // <div className="flex flex-wrap font-corm">
             {switch (state) {
               | LoadingImg => React.null
               | LoadedImg(src) => 
@@ -140,6 +131,6 @@ let make = () => {
                     ->React.array;
               }
             }
-        </div>
+        // </div>
     </section>
 };

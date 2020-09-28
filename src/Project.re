@@ -2,12 +2,13 @@
 
 let colors = {
   "typescript": "#2b7489",
-  "shell": "#89e051",
+  "other": "#ededed",
   "go": "#00ADD8",
   "vue": "#2c3e50",
   "html": "#e34c26",
   "css": "#563d7c",
   "javascript": "#f1e05a",
+  "reason": "#ff5847",
 };
 
 [@react.component]
@@ -40,34 +41,36 @@ let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i
 
 
 
-    <div style={ReactDOMRe.Style.make(
-                ~height="400px",
-                ~flex="1 0 auto",
-                (),
-            )} className="m-px bg-red-400 flex justify-center">
+    <section className="flex flex-row-reverse portrait:flex-col min-h-screen">
         // <h3 className="text-3xl font-bold">title->React.string</h3>
-        // <div></div>
-        <img
-            src="./src/assets/333.jpg"
-            className="w-full"
-            // style={ReactDOMRe.Style.make(
-            //     ~objectPosition=offset->string_of_int ++ "px",
-            //     (),
-            // )}
-            // alt
-        />
-        // <div className="w-60 flex text-3xl">
-        //     <a className="flex-grow text-center hover:bg-dk-sienna hover:text-id-lite" rel="noopener noreferrer" href=code ariaLabel=codeAria>"code"->React.string</a>
-        //     {
-        //         switch (live) {
-        //         | Some(live) => <a className="hover:bg-dk-sienna hover:text-id-lite flex-grow text-center" rel="noopener noreferrer" href=live ariaLabel=liveAria>"live"->React.string</a>
-        //         | None => React.null
-        //         }
-        //     }
-        // </div>
+        <div className="h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
+            <img
+                src
+                className="max-w-none h-full object-cover object-left wdk1:w-full"
+                style={ReactDOMRe.Style.make(
+                    ~objectPosition=offset->string_of_int ++ "px",
+                    (),
+                )}
+                alt
+            />
+        </div>
+        <div className="w-1/2 portrait:w-auto">
+            <h2 className="text-center">title->React.string</h2>
+            <p></p>
+            <a className="flex-grow text-center hover:bg-dk-sienna hover:text-id-lite" rel="noopener noreferrer" href=code ariaLabel=codeAria>"code"->React.string</a>
+            {
+                switch (live) {
+                | Some(live) => <a className="hover:bg-dk-sienna hover:text-id-lite flex-grow text-center" rel="noopener noreferrer" href=live ariaLabel=liveAria>"live"->React.string</a>
+                | None => React.null
+                }
+            }
+
+
+
+        </div>
         // <div className="text-2xl font-bold leading-5 text-center">
         //     <p>tech1->React.string</p>
         //     <p>tech2->React.string</p>
         // </div>
-    </div>
+    </section>
 };
