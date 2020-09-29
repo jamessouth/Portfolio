@@ -1,6 +1,6 @@
 [@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
 
-type state =
+type picState =
 | LoadingImg
 | LoadedImg(string);
 
@@ -16,7 +16,7 @@ let colors = {
 };
 
 [@react.component]
-let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~i, ~src) => {
+let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~obPos) => {
  
 
     let (picState, setPicState) = React.useState(() => LoadingImg);
@@ -24,12 +24,12 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~i, ~src) =
 
     React.useEffect0(() => {
       Js.Promise.(
-        fetch("./src/assets/portsprite.jpg")
+        fetch(path)
           |>then_(response => {
               if (response##ok) {
-                setState(_previousState => LoadedImg(response##url));
+                setPicState(_previousState => LoadedImg(response##url));
               } else {
-                setState(_previousState => LoadedImg(""));
+                setPicState(_previousState => LoadedImg(""));
                 Js.log("failed to fetch " ++ response##url);
               }
               Js.Promise.resolve();
@@ -73,8 +73,11 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~i, ~src) =
         // <h3 className="text-3xl font-bold">title->React.string</h3>
         <div className="bg-img-bg h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
-                src
-                className="h-full object-cover object-left wdk1:w-full"
+                src={switch (picState) {
+                      | LoadingImg => ""
+                      | LoadedImg(src) => src
+                }}
+                className={"h-full object-cover wdk1:w-full " ++ "object-" ++ obPos}
                 alt
             />
         </div>
