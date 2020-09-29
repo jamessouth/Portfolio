@@ -111,17 +111,19 @@ let make = () => {
     });
 
     <section id="port">
-        // <h2>"Portfolio"->React.string</h2>
-        // <div className="flex flex-wrap font-corm">
-            {switch (state) {
-              | LoadingImg => React.null
-              | LoadedImg(src) => 
-                projects
-                    ->Belt.Array.mapWithIndex((i, {title, live, code, alt, tech1, tech2, liveAria, codeAria}) =>
-                        <Project title live code alt tech1 tech2 liveAria codeAria i src key=title/>)
-                    ->React.array;
-              }
-            }
+        // <div className="">
+          <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t">
+            "PORTFOLIO"->React.string
+          </h2>
         // </div>
+          {switch (state) {
+            | LoadingImg => React.null
+            | LoadedImg(src) => 
+              projects
+                  ->Belt.Array.mapWithIndex((i, {title, live, code, alt, text, liveAria, codeAria}) =>
+                      <Project title live code alt text liveAria codeAria i src key=title/>)
+                  ->React.array;
+            }
+          }
     </section>
 };

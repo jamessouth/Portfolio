@@ -19,10 +19,12 @@ module.exports = {
                 // oiuoiuh
                 'dark-blue': '#405d82',
                 'eerie-black': '#161616',
+                'img-bg': '#e2e2e2',
             },
             fontFamily: {
-                'perm': '"Permanent Marker", cursive',
                 'corm': '"Cormorant SC", serif',
+                'forum': 'Forum, cursive',
+                'perm': '"Permanent Marker", cursive',
                 'sche': 'Scheherazade, serif',
             },
             fontSize: {

@@ -90,7 +90,9 @@ let make = () => {
 
 
     <section id="cont">
-        <h2>"Contact"->React.string</h2>
+        <h2 className="font-forum">
+          "CONTACT"->React.string
+        </h2>
         <div className="flex flex-row justify-around items-center flex-wrap xl:m-auto max-w-cont">
             {switch (state) {
               | LoadingImg => React.null

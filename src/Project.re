@@ -12,7 +12,7 @@ let colors = {
 };
 
 [@react.component]
-let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i, ~src) => {
+let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~i, ~src) => {
     let offset = i * -240; // each pic in the sprite is 240x240
 
     let (state, setState) = React.useState(() => "");
@@ -43,10 +43,10 @@ let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i
 
     <section className="flex flex-row-reverse portrait:flex-col min-h-screen">
         // <h3 className="text-3xl font-bold">title->React.string</h3>
-        <div className="h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
+        <div className="bg-img-bg h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
                 src
-                className="max-w-none h-full object-cover object-left wdk1:w-full"
+                className="max-w-none h-full object-cover wdk1:w-full"
                 style={ReactDOMRe.Style.make(
                     ~objectPosition=offset->string_of_int ++ "px",
                     (),
@@ -55,8 +55,8 @@ let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i
             />
         </div>
         <div className="w-1/2 portrait:w-auto">
-            <h2 className="text-center">title->React.string</h2>
-            <p></p>
+            <h3 className="text-center">title->React.string</h3>
+            <p>text->React.string</p>
             <a className="flex-grow text-center hover:bg-dk-sienna hover:text-id-lite" rel="noopener noreferrer" href=code ariaLabel=codeAria>"code"->React.string</a>
             {
                 switch (live) {
@@ -68,9 +68,6 @@ let make = (~title, ~live, ~code, ~alt, ~tech1, ~tech2, ~liveAria, ~codeAria, ~i
 
 
         </div>
-        // <div className="text-2xl font-bold leading-5 text-center">
-        //     <p>tech1->React.string</p>
-        //     <p>tech2->React.string</p>
-        // </div>
+
     </section>
 };

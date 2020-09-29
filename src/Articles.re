@@ -18,7 +18,9 @@ if (CSS.paintWorklet) {
 [@react.component]
 let make = () => {
     <section id="articles">
-        <h2>"Articles"->React.string</h2>
+        <h2 className="font-forum">
+            "ARTICLES"->React.string
+        </h2>
         
 
         <Article link="https://dev.to/jamessouth/generating-shapes-and-images-with-the-css-paint-houdini-api-29c" title="Generating Shapes and Images with the CSS Paint (Houdini) API" aid="art0"/>

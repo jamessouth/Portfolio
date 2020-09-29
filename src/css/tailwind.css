@@ -3,9 +3,9 @@
     *{
         @apply text-eerie-black;
     }
-    li{
+    /* li{
         @apply font-bold my-0 mx-2 text-hdr;
-    }
+    } */
     li::before{
         content: "\200B";
         @apply absolute;
@@ -28,11 +28,11 @@
             @apply m-0;
         }
     } */
-    @screen sm{
+    /* @screen sm{
         li{
             @apply text-exp;
         }
-    }
+    } */
     #port:target,
     #about:target,
     #articles:target,
@@ -47,9 +47,9 @@
             @apply pt-12;
         }
     } */
-    h2{
+    /* h2{
         @apply text-center text-3xl m-12 font-bold font-corm;
-    }
+    } */
     /* @screen md{
         h2{
             @apply text-4xl m-16;
