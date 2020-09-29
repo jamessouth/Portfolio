@@ -69,9 +69,14 @@
     cite{
         @apply italic;
     }
-    #about div p::first-letter{
+    #about p::first-letter{
         color: #405d82;
         @apply font-perm text-first-letter font-bold -mt-16 -mb-8 -mr-4 pr-5 float-left;
+    }
+    @screen lg{
+        #about p::first-letter{
+            @apply -mt-24 -mb-16 pr-6 text-first-letter;
+        }
     }
     /* #body{
         background-image: paint(bod);

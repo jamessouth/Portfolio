@@ -1,4 +1,4 @@
-[@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
+// [@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
 
 type project = {
     title: string,
@@ -10,9 +10,7 @@ type project = {
     codeAria: string,
 };
 
-type state =
-| LoadingImg
-| LoadedImg(string);
+
 
 let projects: array(project) = [|
   {
@@ -33,51 +31,51 @@ let projects: array(project) = [|
     liveAria: "live site for timezones project",
     codeAria: "code for timezones project",
   },
-  {
-    title: "portfolio",
-    text: "Previous versions of my portfolio site were all built with plain JavaScript. I recently started learning ReasonML for a different project and I really enjoy it, so when the need arose to rebuild my portfolio site, I opted to do it with ReasonML/ReasonReact, which is compiled to JavaScript with BuckleScript.",
-    code: "https://github.com/jamessouth/portfolio",
-    alt: "hovering cubes with images of my websites on each side",
-    codeAria: "code for portfolio project",
-    live: None,
-    liveAria: "",
-  },
-  {
-    title: "dashboard",
-    text: "Dashboard was originally a plain JavaScript school project that I rebuilt with Vue, Vuex, Vue Router, real data, webpack, Babel, and ESLint. I wanted to learn about Progressive Web Apps so I added a service worker, manifest, icon, and necessary UI changes and it is now an installable PWA!",
-    live: Some("https://jamessouth.github.io/dashboard/"),
-    code: "https://github.com/jamessouth/dashboard",
-    alt: "a doughnut chart",
-    liveAria: "live site for web app dashboard project",
-    codeAria: "code for web app dashboard project",
-  },
-  {
-    title: "directory",
-    text: "Directory was also a plain JavaScript school project that I rebuilt with React and have also made into a PWA. I added a sort feature on top of the original filter requirement, made it accessible including testing with a screen reader, and I refactored this project to learn React Hooks when they came out.",
-    live: Some("https://jamessouth.github.io/directory/"),
-    code: "https://github.com/jamessouth/directory",
-    alt: "employee info cards laid out in a grid",
-    liveAria: "live site for employee directory project",
-    codeAria: "code for employee directory project",
-  },
-  {
-    title: "puzzle generator",
-    text: "15 Puzzle Generator was my first non-school project idea. I originally built it to learn Vue but have since rebuilt it with Angular and TypeScript. I styled it with a mix of Art Deco fonts and Art Nouveau artwork from Czech artist Alfons Mucha.",
-    live: Some("https://jamessouth.github.io/fifteen-puzzle-generator/home"),
-    code: "https://github.com/jamessouth/fifteen-puzzle-generator",
-    alt: "an unsolved sliding block puzzle",
-    liveAria: "live site for 15 puzzle generator project",
-    codeAria: "code for 15 puzzle generator project",
-  },
-  {
-    title: "face scramble!",
-    text: "In 2018, I attended a conference where I learned about programming for mobile devices with NativeScript. I had already devised code to play a 15 puzzle for my first portfolio site and my 15 Puzzle Generator project, so I immediately had an idea for what to build with NativeScript. Face Scramble! was also my first foray into Angular and TypeScript. Unfortunately, my computer does not seem to be powerful enough to build this for publication, so for now, on the GitHub repo, I just have a GIF I made of me playing it on my phone.",
-    code: "https://github.com/jamessouth/face-scramble",
-    alt: "a 15 puzzle being solved along with moves and elapsed time",
-    codeAria: "code for face scramble project",
-    live: None,
-    liveAria: "",
-  },
+  // {
+  //   title: "portfolio",
+  //   text: "Previous versions of my portfolio site were all built with plain JavaScript. I recently started learning ReasonML for a different project and I really enjoy it, so when the need arose to rebuild my portfolio site, I opted to do it with ReasonML/ReasonReact, which is compiled to JavaScript with BuckleScript.",
+  //   code: "https://github.com/jamessouth/portfolio",
+  //   alt: "hovering cubes with images of my websites on each side",
+  //   codeAria: "code for portfolio project",
+  //   live: None,
+  //   liveAria: "",
+  // },
+  // {
+  //   title: "dashboard",
+  //   text: "Dashboard was originally a plain JavaScript school project that I rebuilt with Vue, Vuex, Vue Router, real data, webpack, Babel, and ESLint. I wanted to learn about Progressive Web Apps so I added a service worker, manifest, icon, and necessary UI changes and it is now an installable PWA!",
+  //   live: Some("https://jamessouth.github.io/dashboard/"),
+  //   code: "https://github.com/jamessouth/dashboard",
+  //   alt: "a doughnut chart",
+  //   liveAria: "live site for web app dashboard project",
+  //   codeAria: "code for web app dashboard project",
+  // },
+  // {
+  //   title: "directory",
+  //   text: "Directory was also a plain JavaScript school project that I rebuilt with React and have also made into a PWA. I added a sort feature on top of the original filter requirement, made it accessible including testing with a screen reader, and I refactored this project to learn React Hooks when they came out.",
+  //   live: Some("https://jamessouth.github.io/directory/"),
+  //   code: "https://github.com/jamessouth/directory",
+  //   alt: "employee info cards laid out in a grid",
+  //   liveAria: "live site for employee directory project",
+  //   codeAria: "code for employee directory project",
+  // },
+  // {
+  //   title: "puzzle generator",
+  //   text: "15 Puzzle Generator was my first non-school project idea. I originally built it to learn Vue but have since rebuilt it with Angular and TypeScript. I styled it with a mix of Art Deco fonts and Art Nouveau artwork from Czech artist Alfons Mucha.",
+  //   live: Some("https://jamessouth.github.io/fifteen-puzzle-generator/home"),
+  //   code: "https://github.com/jamessouth/fifteen-puzzle-generator",
+  //   alt: "an unsolved sliding block puzzle",
+  //   liveAria: "live site for 15 puzzle generator project",
+  //   codeAria: "code for 15 puzzle generator project",
+  // },
+  // {
+  //   title: "face scramble!",
+  //   text: "In 2018, I attended a conference where I learned about programming for mobile devices with NativeScript. I had already devised code to play a 15 puzzle for my first portfolio site and my 15 Puzzle Generator project, so I immediately had an idea for what to build with NativeScript. Face Scramble! was also my first foray into Angular and TypeScript. Unfortunately, my computer does not seem to be powerful enough to build this for publication, so for now, on the GitHub repo, I just have a GIF I made of me playing it on my phone.",
+  //   code: "https://github.com/jamessouth/face-scramble",
+  //   alt: "a 15 puzzle being solved along with moves and elapsed time",
+  //   codeAria: "code for face scramble project",
+  //   live: None,
+  //   liveAria: "",
+  // },
 |];
 
 
@@ -87,28 +85,7 @@ let projects: array(project) = [|
 
 [@react.component]
 let make = () => {
-    let (state, setState) = React.useState(() => LoadingImg);
 
-    React.useEffect0(() => {
-      Js.Promise.(
-        fetch("./src/assets/portsprite.jpg")
-          |>then_(response => {
-              if (response##ok) {
-                setState(_previousState => LoadedImg(response##url));
-              } else {
-                setState(_previousState => LoadedImg(""));
-                Js.log("failed to fetch " ++ response##url);
-              }
-              Js.Promise.resolve();
-            })
-          |>catch(_err => {
-            Js.log2("failed to fetch: ", _err);
-            Js.Promise.resolve();
-          })
-          |>ignore
-      );
-      None;
-    });
 
     <section id="port">
         // <div className="">

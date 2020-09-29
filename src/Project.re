@@ -1,5 +1,9 @@
 [@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
 
+type state =
+| LoadingImg
+| LoadedImg(string);
+
 let colors = {
   "typescript": "#2b7489",
   "other": "#ededed",
@@ -13,9 +17,31 @@ let colors = {
 
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~i, ~src) => {
-    let offset = i * -240; // each pic in the sprite is 240x240
+ 
 
-    let (state, setState) = React.useState(() => "");
+    let (picState, setPicState) = React.useState(() => LoadingImg);
+    let (langState, setLangState) = React.useState(() => "");
+
+    React.useEffect0(() => {
+      Js.Promise.(
+        fetch("./src/assets/portsprite.jpg")
+          |>then_(response => {
+              if (response##ok) {
+                setState(_previousState => LoadedImg(response##url));
+              } else {
+                setState(_previousState => LoadedImg(""));
+                Js.log("failed to fetch " ++ response##url);
+              }
+              Js.Promise.resolve();
+            })
+          |>catch(_err => {
+            Js.log2("failed to fetch: ", _err);
+            Js.Promise.resolve();
+          })
+          |>ignore
+      );
+      None;
+    });
 
     React.useEffect0(() => {
 
@@ -41,16 +67,14 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~i, ~src) =
 
 
 
+
+
     <section className="flex flex-row-reverse portrait:flex-col min-h-screen">
         // <h3 className="text-3xl font-bold">title->React.string</h3>
         <div className="bg-img-bg h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
                 src
-                className="max-w-none h-full object-cover wdk1:w-full"
-                style={ReactDOMRe.Style.make(
-                    ~objectPosition=offset->string_of_int ++ "px",
-                    (),
-                )}
+                className="h-full object-cover object-left wdk1:w-full"
                 alt
             />
         </div>

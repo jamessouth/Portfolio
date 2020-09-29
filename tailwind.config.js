@@ -30,6 +30,7 @@ module.exports = {
             fontSize: {
                 // 'hdr': '1.3rem',
                 'first-letter': '5rem',
+                'first-letter-big': '7rem',
             },
             height: {
                 'half-screen': '50vh',
