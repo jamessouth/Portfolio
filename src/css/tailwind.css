@@ -11,18 +11,19 @@
         @apply absolute;
     }
     a{
-        @apply no-underline border-2 border-solid border-transparent;
+        @apply outline-none;
     }
     #about a{
         @apply underline text-dark-blue;
     }
-    #about a:hover{
+    #about a:hover,
+    #about a:focus{
         @apply bg-dark-blue text-white;
     }
-    a:focus,
+    /* a:focus,
     #cont a:hover{
         @apply outline-none border-solid border-2 border-dark-blue;
-    }
+    } */
     /* @screen exp{
         li{
             @apply m-0;
