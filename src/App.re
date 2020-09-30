@@ -5,7 +5,7 @@ let make = () => {
         <main>
             <About/>
             <Port/>
-            // <Articles/>
+            <Articles/>
             // <Contact/>
         </main>
     </>

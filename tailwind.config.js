@@ -37,14 +37,14 @@ module.exports = {
                 'half-screen': '50vh',
             },
             maxWidth: {
-                'harp': '1238px',
+                'artw': '27.5rem',
                 'cont': '2000px',
+                'harp': '1238px',
             },
             spacing: {
                 '60': '15rem',
-                'cardw': '20rem',
+                // 'cardw': '20rem',
                 'cw-lg': '25rem',
-                'cardh': '26rem',
             },
             screens: {
                 'portrait': {

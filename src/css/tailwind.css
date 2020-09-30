@@ -79,15 +79,6 @@
             @apply -mt-24 -mb-16 pr-6 text-first-letter;
         }
     }
-    /* #body{
-        background-image: paint(bod);
-    } */
-    #art0{
-        background-image: paint(art0);
-    }
-    #art1{
-        background-image: paint(art1);
-    }
     .newwindow::after{
         content: '';
         display: inline-block;
