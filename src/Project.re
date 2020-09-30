@@ -77,23 +77,25 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~obP
                       | LoadingImg => ""
                       | LoadedImg(src) => src
                 }}
-                className={"h-full object-cover wdk1:w-full " ++ "object-" ++ obPos}
+                className={
+                  "h-full object-cover wdk1:w-full " ++ "object-" ++ obPos
+                }
                 alt
             />
         </div>
         <div className="w-1/2 portrait:w-auto">
-            <h3 className="text-center">title->React.string</h3>
-            <p>text->React.string</p>
-            <a className="flex-grow text-center hover:bg-dk-sienna hover:text-id-lite" rel="noopener noreferrer" href=code ariaLabel=codeAria>"code"->React.string</a>
-            {
-                switch (live) {
-                | Some(live) => <a className="hover:bg-dk-sienna hover:text-id-lite flex-grow text-center" rel="noopener noreferrer" href=live ariaLabel=liveAria>"live"->React.string</a>
-                | None => React.null
-                }
-            }
+            <h3 className="text-center m-8 capitalize font-cinz text-3xl">title->React.string</h3>
+            <p className="font-gara text-xl mx-auto mb-10 w-4/5">text->React.string</p>
+            <div>
+              <a className="text-center hover:bg-dk-sienna hover:text-id-lite" rel="noopener noreferrer" href=code ariaLabel=codeAria>"code"->React.string</a>
+              {
+                  switch (live) {
+                  | Some(live) => <a className="hover:bg-dk-sienna hover:text-id-lite text-center" rel="noopener noreferrer" href=live ariaLabel=liveAria>"live"->React.string</a>
+                  | None => React.null
+                  }
+              }
 
-
-
+            </div>
         </div>
 
     </section>

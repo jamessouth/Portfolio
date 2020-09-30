@@ -71,7 +71,7 @@ let projects: array(project) = [|
     codeAria: "code for employee directory project",
   },
   {
-    title: "puzzle generator",
+    title: "15 puzzle generator",
     obPos: "right",
     path: "./src/assets/puzz.jpg",
     text: "15 Puzzle Generator was my first non-school project idea. I originally built it to learn Vue but have since rebuilt it with Angular and TypeScript. I styled it with a mix of Art Deco fonts and Art Nouveau artwork from Czech artist Alfons Mucha.",
@@ -93,6 +93,9 @@ let projects: array(project) = [|
     liveAria: "",
   },
 |];
+
+
+
 
 
 

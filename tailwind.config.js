@@ -22,10 +22,11 @@ module.exports = {
                 'img-bg': '#e2e2e2',
             },
             fontFamily: {
+                'cinz': 'Cinzel, serif',
                 'corm': '"Cormorant SC", serif',
                 'forum': 'Forum, cursive',
+                'gara': 'EB Garamond, serif',
                 'perm': '"Permanent Marker", cursive',
-                'sche': 'Scheherazade, serif',
             },
             fontSize: {
                 // 'hdr': '1.3rem',

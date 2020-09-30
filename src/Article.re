@@ -3,7 +3,7 @@ let make = (~link, ~title, ~aid) => {
 
     <div>
         <a
-            className="block mb-10 text-center font-bold font-sche text-2xl"
+            className="block mb-10 text-center font-bold text-2xl"
             rel="noopener noreferrer"
             href=link
         >
