@@ -6,7 +6,7 @@ let make = () => {
             <About/>
             <Port/>
             <Articles/>
-            // <Contact/>
+            <Contact/>
         </main>
     </>
 };
