@@ -27,6 +27,7 @@ module.exports = {
                 'forum': 'Forum, cursive',
                 'gara': 'EB Garamond, serif',
                 'perm': '"Permanent Marker", cursive',
+                'rob': 'Roboto Mono, monospace',
             },
             fontSize: {
                 // 'hdr': '1.3rem',
@@ -41,7 +42,14 @@ module.exports = {
                 'cont': '2000px',
                 'harp': '1238px',
             },
+            objectPosition: {
+                'port': '0px',
+                'art': '-39px',
+                'cont': '-78px',
+            },
             spacing: {
+                'iconw': '39px',
+                'iconh': '37px',
                 '60': '15rem',
                 // 'cardw': '20rem',
                 'cw-lg': '25rem',
