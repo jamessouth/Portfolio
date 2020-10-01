@@ -36,11 +36,12 @@ let make = () => {
 
 
 
-    <header className="fixed bg-white top-0 w-screen h-12 z-20">
+
+    <header className="fixed bg-dark-blue bottom-0 w-screen h-12 z-20">
         <nav className="my-0 mx-1 h-full">
             <ul className="font-rob flex justify-between items-center h-full">
                 <li>
-                    <a className="text-3xl" href="#about">"JS"->React.string</a>
+                    <a className="text-3xl text-white" href="#about">"JS"->React.string</a>
                 </li>
                 {
                   switch (state) {
@@ -80,10 +81,8 @@ let make = () => {
 
 
 
-
-
                 <li>
-                    <a className="text-3xl sm:newwindow" target="_blank" rel="noopener noreferrer" >"CV"->React.string</a>
+                    <a className="text-3xl text-white sm:newwindow" target="_blank" rel="noopener noreferrer" >"CV"->React.string</a>
                 </li>
             </ul>
         </nav>
