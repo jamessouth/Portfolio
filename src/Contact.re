@@ -9,11 +9,6 @@ type contact = {
 
 
 
-
-
-
-
-
 type state =
 | LoadingImg
 | LoadedImg(string);
