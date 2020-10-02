@@ -31,8 +31,8 @@ module.exports = {
             },
             fontSize: {
                 // 'hdr': '1.3rem',
-                'first-letter': '5rem',
-                'first-letter-big': '7rem',
+                // 'first-letter': '5rem',
+                // 'first-letter-big': '7rem',
             },
             height: {
                 'half-screen': '50vh',
@@ -48,6 +48,7 @@ module.exports = {
                 'cont': '-78px',
             },
             spacing: {
+                // 'first-letter': '2.65rem',
                 'iconw': '39px',
                 'iconh': '37px',
                 '60': '15rem',

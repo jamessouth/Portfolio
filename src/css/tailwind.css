@@ -72,12 +72,15 @@
         @apply italic;
     }
     #about p::first-letter{
-        color: #405d82;
-        @apply font-perm text-first-letter font-bold -mt-16 -mb-8 -mr-4 pr-5 float-left;
+        color: #e68621;
+        margin-top: -2.65rem;
+        @apply font-corm text-6xl font-bold -mb-8 mr-2 float-left;
     }
     @screen lg{
         #about p::first-letter{
-            @apply -mt-24 -mb-16 pr-6 text-first-letter;
+            margin-top: -5.5rem;
+            font-size: 7rem;
+            @apply -mb-16;
         }
     }
 
