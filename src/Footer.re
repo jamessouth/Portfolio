@@ -41,7 +41,6 @@ let make = () => {
               className="font-rob flex justify-between items-center h-full"
               onClick={event => {
                 let id = ReactEvent.Mouse.target(event)##id;
-                Js.log(id);
                 if (id != "") {
                   setSelectedState(_ => id);
                 }

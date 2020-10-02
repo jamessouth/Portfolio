@@ -85,7 +85,7 @@ let make = () => {
 
 
 
-    <section id="cont">
+    <section className="bg-img-bg" id="cont">
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t">
           "CONTACT"->React.string
         </h2>

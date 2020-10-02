@@ -1,5 +1,3 @@
-// [@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
-
 type project = {
     title: string,
     live: option(string),
@@ -11,8 +9,6 @@ type project = {
     liveAria: string,
     codeAria: string,
 };
-
-
 
 let projects: array(project) = [|
   {
@@ -41,7 +37,7 @@ let projects: array(project) = [|
     title: "portfolio",
     obPos: "left",
     path: "./src/assets/clean.jpg",
-    text: "Previous versions of my portfolio site were all built with plain JavaScript. I recently started learning ReasonML for a different project and I really enjoy it, so when the need arose to rebuild my portfolio site, I opted to do it with ReasonML/ReasonReact, which is compiled to JavaScript with BuckleScript.",
+    text: "Previous versions of my portfolio site were all built with plain JavaScript. I recently started learning ReasonML for a different project and I really enjoy it, so when the need arose to rebuild my portfolio site, I opted to do it with ReasonML + ReasonReact, which is compiled to JavaScript with BuckleScript.",
     code: "https://github.com/jamessouth/portfolio",
     alt: "hovering cubes with images of my websites on each side",
     codeAria: "code for portfolio project",
@@ -95,20 +91,13 @@ let projects: array(project) = [|
 |];
 
 
-
-
-
-
-
-
-
 [@react.component]
 let make = () => {
 
 
     <section id="port">
         // <div className="">
-          <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t">
+          <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">
             "PORTFOLIO"->React.string
           </h2>
         // </div>

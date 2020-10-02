@@ -3,7 +3,7 @@ let make = (~link, ~title, ~src, ~alt, ~obPos) => {
 
     <div>
         <a
-            className="underline block mb-10 text-center font-gara w-4/5 mx-auto text-2xl hover:bg-eerie-black hover:text-white focus:bg-eerie-black focus:text-white"
+            className="underline block mb-10 text-center font-gara w-4/5 mx-auto text-xl hover:bg-eerie-black hover:text-white focus:bg-eerie-black focus:text-white"
             rel="noopener noreferrer"
             href=link
         >

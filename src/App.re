@@ -1,7 +1,7 @@
 [@react.component]
 let make = () => {
     <>
-        <Header/>
+        <Footer/>
         <main>
             <About/>
             <Port/>
