@@ -3,7 +3,7 @@ let make = () => {
     <section className="flex flex-row-reverse portrait:flex-col min-h-screen" id="about">
         <div className="bg-img-bg h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
-                className="h-full object-cover object-left wdk1:w-full"
+                className="h-full object-cover object-left w-full"
                 alt="a web dev's desk and laptop"
                 src="./src/assets/wdksmall.png"
             />

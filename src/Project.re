@@ -78,7 +78,7 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~obP
                       | LoadedImg(src) => src
                 }}
                 className={
-                  "h-full object-cover wdk1:w-full " ++ "object-" ++ obPos
+                  "h-full object-cover w-full " ++ "object-" ++ obPos
                 }
                 alt
             />

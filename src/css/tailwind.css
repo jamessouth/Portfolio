@@ -34,12 +34,13 @@
             @apply text-exp;
         }
     } */
-    #port:target,
+    /* #port:target,
     #about:target,
     #articles:target,
     #cont:target{
         @apply pt-24;
-    }
+    } */
+
     /* @screen exp{
         #port:target,
         #about:target,
@@ -89,6 +90,9 @@
 @layer components{
     .bord{
         @apply border-2 border-solid border-transparent;
+    }
+    .selected{
+        filter: invert(.92);
     }
 }
 @tailwind utilities;
