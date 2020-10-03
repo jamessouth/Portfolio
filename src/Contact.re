@@ -89,7 +89,7 @@ let make = () => {
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">
           "CONTACT"->React.string
         </h2>
-        <div className="flex flex-row justify-around items-center flex-wrap mb-12 xl:m-auto max-w-cont">
+        <div className="flex flex-row justify-around items-center flex-wrap mb-12 xl:m-auto xl:mb-16 max-w-cont">
             {switch (state) {
               | LoadingImg => React.null
               | LoadedImg(src) => 

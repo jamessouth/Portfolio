@@ -81,7 +81,7 @@ let projects: array(project) = [|
     title: "face scramble!",
     obPos: "right",
     path: "./src/assets/face.jpg",
-    text: "In 2018, I attended a conference where I learned about programming for mobile devices with NativeScript. I had already devised code to play a 15 puzzle for my first portfolio site and my 15 Puzzle Generator project, so I immediately had an idea for what to build with NativeScript. Face Scramble! was also my first foray into Angular and TypeScript. Unfortunately, my computer does not seem to be powerful enough to build this for publication, so for now, on the GitHub repo, I just have a GIF I made of me playing it on my phone.",
+    text: "In 2018, I attended a conference where I learned about programming for mobile devices with NativeScript. I had already devised code to play a 15 puzzle for my first portfolio site and my 15 Puzzle Generator project, so I immediately had an idea for what to build with NativeScript. Face Scramble! was also my first foray into Angular and TypeScript. Unfortunately, my computer does not seem to be powerful enough to build this for publication, so for now, on the GitHub repo, I just have a GIF of me playing it on my phone.",
     code: "https://github.com/jamessouth/face-scramble",
     alt: "a 15 puzzle being solved along with moves and elapsed time",
     codeAria: "code for face scramble project",
