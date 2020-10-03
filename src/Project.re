@@ -6,7 +6,14 @@ type picState =
 
 
 [@react.component]
-let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~obPos) => {
+let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
+
+    let flexDir = (index) => {
+      switch (index mod 2) {
+      | 0 => ""
+      | _ => "flex-row-reverse"
+      }
+    }
  
 
     let (picState, setPicState) = React.useState(() => LoadingImg);
@@ -34,7 +41,12 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~obP
 
 
 
-    <section className="flex flex-row-reverse portrait:flex-col min-h-screen">
+    <section
+      className={
+        flexDir(i) ++ " flex portrait:flex-col min-h-screen"
+      }
+    >
+
         <div className="bg-img-bg h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
                 src={switch (picState) {

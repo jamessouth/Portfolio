@@ -48,7 +48,7 @@ let projects: array(project) = [|
     title: "dashboard",
     obPos: "center",
     path: "./src/assets/dash.jpg",
-    text: "Dashboard was originally a plain JavaScript school project that I rebuilt with Vue, Vuex, Vue Router, real data, webpack, Babel, and ESLint. I wanted to learn about Progressive Web Apps so I added a service worker, manifest, icon, and necessary UI changes and it is now an installable PWA!",
+    text: "Dashboard was originally a plain JavaScript school project that I rebuilt with Vue, Vuex, Vue Router, and real data. I wanted to learn about Progressive Web Apps so I added a service worker, manifest, icon, and necessary UI changes and it is now an installable PWA!",
     live: Some("https://jamessouth.github.io/dashboard/"),
     code: "https://github.com/jamessouth/dashboard",
     alt: "a doughnut chart",
@@ -106,8 +106,8 @@ let make = () => {
             // | LoadingImg => React.null
             // | LoadedImg(src) => 
               projects
-                  ->Belt.Array.map(({title, live, code, alt, text, liveAria, codeAria, path, obPos}) =>
-                      <Project title live code alt text liveAria codeAria path obPos key=title/>)
+                  ->Belt.Array.mapWithIndex((i, {title, live, code, alt, text, liveAria, codeAria, path, obPos}) =>
+                      <Project title live code alt text liveAria codeAria path i obPos key=title/>)
                   ->React.array;
             }
           // }
