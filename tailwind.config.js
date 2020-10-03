@@ -28,7 +28,7 @@ module.exports = {
                 'half-screen': '50vh',
             },
             maxWidth: {
-                'artw': '27.5rem',
+                'artw': '16rem',
                 'cont': '2000px',
             },
             objectPosition: {
