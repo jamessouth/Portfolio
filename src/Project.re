@@ -41,13 +41,15 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
 
 
 
+
+
     <section
       className={
         flexDir(i) ++ " flex portrait:flex-col portrait:min-h-screen landscape500:min-h-0"
       }
     >
 
-        <div className="bg-img-bg h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
+        <div className="bg-img-bg portrait:h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
                 src={switch (picState) {
                       | LoadingImg => ""

@@ -26,7 +26,7 @@ let projects: array(project) = [|
     title: "time zones",
     obPos: "left",
     path: "./src/assets/time.jpg",
-    text: "Time Zones displays the locations (and optional city/state/national flag) in a selected time zone, or the user can select a place and receive the zone or zones covering that location. I seeded the MongoDB with a series of Node.js streams, then updated the documents with the flag URLs, then wrote a script to get each URL, download the flag image as base64, and overwrite the URL with the base64 encoded flag. I wrote a GraphQL API to interface with the database and return the results of the user's query to the React frontend. It is also live on Heroku!",
+    text: "Time Zones displays the locations (and optional flag) in a selected time zone, or the user can select a place and receive the zone or zones covering that location. I seeded the MongoDB with a series of Node.js streams, then updated the documents with the flag URLs, then wrote a script to get each URL, download the flag image as base64, and overwrite the URL with the base64 encoded flag. I wrote a GraphQL API to interface with the database and return the results of the user's query to the React frontend. It is also live on Heroku!",
     live: Some("http://timezones.herokuapp.com/"),
     code: "https://github.com/jamessouth/timezones",
     alt: "list of countries in a time zone",
@@ -36,8 +36,8 @@ let projects: array(project) = [|
   {
     title: "portfolio",
     obPos: "left",
-    path: "./src/assets/clean.jpg",
-    text: "Previous versions of my portfolio site were all built with plain JavaScript. I recently started learning ReasonML for a different project and I really enjoy it, so when the need arose to rebuild my portfolio site, I opted to do it with ReasonML + ReasonReact, which is compiled to JavaScript with BuckleScript.",
+    path: "./src/assets/port.jpg",
+    text: "Previous versions of my portfolio site were all built with plain JavaScript. I recently started learning ReasonML for a different project and I really enjoy it, so when the need arose to rebuild my portfolio site, I opted to do it with ReasonML + ReasonReact, which is compiled to JavaScript with BuckleScript (now ReScript).",
     code: "https://github.com/jamessouth/portfolio",
     alt: "hovering cubes with images of my websites on each side",
     codeAria: "code for portfolio project",
@@ -48,7 +48,7 @@ let projects: array(project) = [|
     title: "dashboard",
     obPos: "center",
     path: "./src/assets/dash.jpg",
-    text: "Dashboard was originally a plain JavaScript school project that I rebuilt with Vue, Vuex, Vue Router, and real data. I wanted to learn about Progressive Web Apps so I added a service worker, manifest, icon, and necessary UI changes and it is now an installable PWA!",
+    text: "Dashboard was originally a plain JavaScript school project that I rebuilt with Vue, Vuex, Vue Router, and real data from the World Bank and NASA. I wanted to learn about Progressive Web Apps, so I added a service worker, manifest, icon, and necessary UI changes and it is now an installable PWA!",
     live: Some("https://jamessouth.github.io/dashboard/"),
     code: "https://github.com/jamessouth/dashboard",
     alt: "a doughnut chart",
@@ -59,7 +59,7 @@ let projects: array(project) = [|
     title: "directory",
     obPos: "right",
     path: "./src/assets/dir.jpg",
-    text: "Directory was also a plain JavaScript school project that I rebuilt with React and have also made into a PWA. I added a sort feature on top of the original filter requirement, made it accessible including testing with a screen reader, and I refactored this project to learn React Hooks when they came out.",
+    text: "Directory was also a plain JavaScript school project. I rebuilt it with React and have also made it into a PWA. I added a sort feature on top of the original filter requirement and I worked a lot on accessibility, including adding ARIA roles and testing with a screen reader (NVDA). I refactored this project to learn React Hooks, including a custom hook, when they were released.",
     live: Some("https://jamessouth.github.io/directory/"),
     code: "https://github.com/jamessouth/directory",
     alt: "employee info cards laid out in a grid",
@@ -70,7 +70,7 @@ let projects: array(project) = [|
     title: "15 puzzle generator",
     obPos: "right",
     path: "./src/assets/puzz.jpg",
-    text: "15 Puzzle Generator was my first non-school project idea. I originally built it to learn Vue but have since rebuilt it with Angular and TypeScript. I styled it with a mix of Art Deco fonts and Art Nouveau artwork from Czech artist Alfons Mucha.",
+    text: "15 Puzzle Generator was my first non-school project idea. I originally built it to learn Vue but have since rebuilt it with Angular and TypeScript. It has routing and animated page transitions and I used RxJS for communication among components. I styled it with a mix of Art Deco fonts and Art Nouveau artwork from Czech artist Alfons Mucha. Check out the live puzzle demo!",
     live: Some("https://jamessouth.github.io/fifteen-puzzle-generator/home"),
     code: "https://github.com/jamessouth/fifteen-puzzle-generator",
     alt: "a form and some art and code",
@@ -96,20 +96,14 @@ let make = () => {
 
 
     <section id="port">
-        // <div className="">
-          <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">
+          <h2 className="font-forum text-5xl px-0 py-12 portrait:mb-16 text-center tracking-wider border-solid border-eerie-black border-t border-b">
             "PORTFOLIO"->React.string
           </h2>
-        // </div>
-          // {switch (state) 
           {
-            // | LoadingImg => React.null
-            // | LoadedImg(src) => 
               projects
                   ->Belt.Array.mapWithIndex((i, {title, live, code, alt, text, liveAria, codeAria, path, obPos}) =>
                       <Project title live code alt text liveAria codeAria path i obPos key=title/>)
                   ->React.array;
-            }
-          // }
+          }
     </section>
 };
