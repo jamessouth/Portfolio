@@ -43,7 +43,7 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
 
     <section
       className={
-        flexDir(i) ++ " flex portrait:flex-col min-h-screen"
+        flexDir(i) ++ " flex portrait:flex-col portrait:min-h-screen landscape500:min-h-0"
       }
     >
 

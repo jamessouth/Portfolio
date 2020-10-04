@@ -47,6 +47,9 @@ module.exports = {
                 'portrait': {
                     'raw': '(orientation: portrait)',
                 },
+                'landscape500': {
+                    'raw': '(orientation: landscape) and (min-height: 500px)',
+                },
                 'wdk1': '440px',
             },
         },
