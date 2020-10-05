@@ -6,10 +6,11 @@ type state =
 | Error(string);
 
 let navLinks = [|
-  ("JS", "#about"),
-  ("portfolio icon", "#port"),
-  ("articles icon", "#articles"),
-  ("contact icon", "#cont"),
+  ("JS", "#about", "", "", ""),
+  ("portfolio icon", "#port", "", "", ""),
+  ("articles icon", "#articles", "", "", ""),
+  ("contact icon", "#cont", "", "", ""),
+  ("CV", "", "noopener noreferrer", "_blank", "sm:newwindow"),
 |];
 
 [@react.component]
@@ -65,71 +66,25 @@ let make = () => {
                   switch (picState) {
                   | LoadingImg => React.null
                   | LoadedImg(src) =>
-                  // <>
-                    navLinks
-                      ->Belt.Array.mapWithIndex((i, (alt, href)) => 
+                    
+                  
+                      
+                      navLinks
+                      ->Belt.Array.mapWithIndex((i, (alt, href, rel, target, cls)) => 
                         <NavItem
                           alt
+                          cls
                           href
                           id=i
+                          rel
                           selectedState
                           src
+                          target
+                          key=alt
                         />)
                       ->React.array;
-                  // </>
-
-                  
-                //     <>
-                // <NavItem
-                //   alt="JS"
-                //   selectedState
-                //   src
-                //   id=0
-                //   href="#about"
-                // />
-                // <NavItem
-                //   alt="portfolio icon"
-                //   selectedState
-                //   src
-                //   id=1
-                //   href="#port"
-                // />
-                // <NavItem
-                //   alt="articles icon"
-                //   selectedState
-                //   src
-                //   id=2
-                //   href="#articles"
-                // />
-                // <NavItem
-                //   alt="contact icon"
-                //   selectedState
-                //   src
-                //   id=3
-                //   href="#cont"
-                // />
 
 
-                // <li className={selectedState - 4 == 0 ? "selected" : ""}>
-                //     <a className="sm:newwindow" target="_blank" rel="noopener noreferrer">
-                    
-
-
-                //       <img
-                //           className="w-iconw h-iconh object-none inline"
-                //           src
-                //           alt="CV"
-                //           style={ReactDOMRe.Style.make(
-                //               ~objectPosition={4 * -39}->string_of_int ++ "px",
-                //               (),
-                //           )}
-                //           id="4"
-                //       />
-
-                //     </a>
-                // </li>
-
-                //     </>
                   | Error(_) =>
                     <>
                       <li className={selectedState - 0 == 0 ? "selected" : ""}>

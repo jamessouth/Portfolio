@@ -1,5 +1,5 @@
 [@react.component]
-let make = (~selectedState, ~id, ~href, ~src, ~alt) => {
+let make = (~alt, ~cls, ~href, ~id, ~rel, ~selectedState, ~src, ~target) => {
 
 
     Js.log2("nav render ", id);
@@ -9,9 +9,9 @@ let make = (~selectedState, ~id, ~href, ~src, ~alt) => {
     <li className={selectedState - id == 0 ? "selected" : ""}>
         
 
-        <a href>
+        <a className=cls href rel target>
             <img
-                className="w-iconw h-iconh object-none"
+                className="inline w-iconw h-iconh object-none"
                 src
                 alt
                 style={ReactDOMRe.Style.make(
