@@ -5,6 +5,13 @@ type state =
 | LoadedImg(string)
 | Error(string);
 
+let navLinks = [|
+  ("JS", "#about"),
+  ("portfolio icon", "#port"),
+  ("articles icon", "#articles"),
+  ("contact icon", "#cont"),
+|];
+
 [@react.component]
 let make = () => {
     let (picState, setPicState) = React.useState(() => LoadingImg);
@@ -58,57 +65,71 @@ let make = () => {
                   switch (picState) {
                   | LoadingImg => React.null
                   | LoadedImg(src) =>
-                    <>
-                <NavItem
-                  alt="JS"
-                  selectedState
-                  src
-                  id=0
-                  href="#about"
-                />
-                <NavItem
-                  alt="portfolio icon"
-                  selectedState
-                  src
-                  id=1
-                  href="#port"
-                />
-                <NavItem
-                  alt="articles icon"
-                  selectedState
-                  src
-                  id=2
-                  href="#articles"
-                />
-                <NavItem
-                  alt="contact icon"
-                  selectedState
-                  src
-                  id=3
-                  href="#cont"
-                />
+                  // <>
+                    navLinks
+                      ->Belt.Array.mapWithIndex((i, (alt, href)) => 
+                        <NavItem
+                          alt
+                          href
+                          id=i
+                          selectedState
+                          src
+                        />)
+                      ->React.array;
+                  // </>
+
+                  
+                //     <>
+                // <NavItem
+                //   alt="JS"
+                //   selectedState
+                //   src
+                //   id=0
+                //   href="#about"
+                // />
+                // <NavItem
+                //   alt="portfolio icon"
+                //   selectedState
+                //   src
+                //   id=1
+                //   href="#port"
+                // />
+                // <NavItem
+                //   alt="articles icon"
+                //   selectedState
+                //   src
+                //   id=2
+                //   href="#articles"
+                // />
+                // <NavItem
+                //   alt="contact icon"
+                //   selectedState
+                //   src
+                //   id=3
+                //   href="#cont"
+                // />
 
 
-                <li className={selectedState - 4 == 0 ? "selected" : ""}>
-                    <a className="sm:newwindow" target="_blank" rel="noopener noreferrer">
+                // <li className={selectedState - 4 == 0 ? "selected" : ""}>
+                //     <a className="sm:newwindow" target="_blank" rel="noopener noreferrer">
                     
 
 
-                      <img
-                          className="w-iconw h-iconh object-none inline"
-                          src
-                          alt="CV"
-                          style={ReactDOMRe.Style.make(
-                              ~objectPosition={4 * -39}->string_of_int ++ "px",
-                              (),
-                          )}
-                          id="4"
-                      />
+                //       <img
+                //           className="w-iconw h-iconh object-none inline"
+                //           src
+                //           alt="CV"
+                //           style={ReactDOMRe.Style.make(
+                //               ~objectPosition={4 * -39}->string_of_int ++ "px",
+                //               (),
+                //           )}
+                //           id="4"
+                //       />
 
-                    </a>
-                </li>
+                //     </a>
+                // </li>
 
-                    </>
+                //     </>
                   | Error(_) =>
                     <>
                       <li className={selectedState - 0 == 0 ? "selected" : ""}>
