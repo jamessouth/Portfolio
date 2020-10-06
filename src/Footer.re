@@ -1,10 +1,3 @@
-[@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
-
-type state =
-| LoadingImg
-| LoadedImg(string)
-| Error(string);
-
 let navLinks = [|
   ("JS", "#about", "", "", "", "JS"),
   ("portfolio icon", "#port", "", "", "", "P"),
@@ -15,30 +8,8 @@ let navLinks = [|
 
 [@react.component]
 let make = () => {
-    let (picState, setPicState) = React.useState(() => LoadingImg);
     let (selectedState, setSelectedState) = React.useState(() => -1);
-
-    React.useEffect0(() => {
-      Js.Promise.(
-        fetch("./src/assets/icons.png")
-          |>then_(response => {
-              if (response##ok) {
-                setPicState(_ => LoadedImg(response##url));
-              } else {
-                setPicState(_ => Error(""));
-                Js.log("failed to fetch " ++ response##url);
-              }
-              Js.Promise.resolve();
-            })
-          |>catch(_err => {
-            setPicState(_ => Error(""));
-            Js.log2("failed to fetch: ", _err);
-            Js.Promise.resolve();
-          })
-          |>ignore
-      );
-      None;
-    });
+    let picState = Hook.useFetch("./src/assets/icons.png");
 
     <footer className="fixed bg-dark-blue bottom-0 w-screen h-12 z-20">
         <nav className="my-0 h-full">
