@@ -1,10 +1,3 @@
-[@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
-
-type picState =
-| LoadingImg
-| LoadedImg(string);
-
-
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
 
@@ -14,44 +7,18 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
       | _ => "flex-row-reverse"
       }
     }
- 
 
-    let (picState, setPicState) = React.useState(() => LoadingImg);
-
-    React.useEffect0(() => {
-      Js.Promise.(
-        fetch(path)
-          |>then_(response => {
-              if (response##ok) {
-                setPicState(_previousState => LoadedImg(response##url));
-              } else {
-                setPicState(_previousState => LoadedImg(""));
-                Js.log("failed to fetch " ++ response##url);
-              }
-              Js.Promise.resolve();
-            })
-          |>catch(_err => {
-            Js.log2("failed to fetch: ", _err);
-            Js.Promise.resolve();
-          })
-          |>ignore
-      );
-      None;
-    });
-
-
-
-
+    let picState = Hook.useFetch(path);
 
     <section
       className={
         flexDir(i) ++ " flex portrait:flex-col portrait:min-h-screen landscape500:min-h-0"
       }
     >
-
         <div className="bg-img-bg portrait:h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
                 src={switch (picState) {
+                      | Error(_)
                       | LoadingImg => ""
                       | LoadedImg(src) => src
                 }}
@@ -72,9 +39,7 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
                   | None => React.null
                   }
               }
-
             </div>
         </div>
-
     </section>
 };

@@ -5,7 +5,7 @@ type state =
 | LoadedImg(string)
 | Error(string);
 
-let useFetch = (path) => {
+let useFetch = path => {
     let (state, setState) = React.useState(() => LoadingImg);
     Js.log2("hook", path)
     React.useEffect0(() => {

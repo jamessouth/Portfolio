@@ -1,17 +1,9 @@
-[@bs.val] external fetch: string => Js.Promise.t('a) = "fetch";
-
 type contact = {
     link: string,
     alt: string,
     off: int,
     w: int,
 };
-
-
-
-type state =
-| LoadingImg
-| LoadedImg(string);
 
 let links: array(contact) = [|
   {
@@ -60,43 +52,27 @@ let links: array(contact) = [|
 
 [@react.component]
 let make = () => {
-    let (state, setState) = React.useState(() => LoadingImg);
-
-    React.useEffect0(() => {
-      Js.Promise.(
-        fetch("./src/assets/contsprite.png")
-          |>then_(response => {
-              if (response##ok) {
-                setState(_previousState => LoadedImg(response##url));
-              } else {
-                setState(_previousState => LoadedImg(""));
-                Js.log("failed to fetch " ++ response##url);
-              }
-              Js.Promise.resolve();
-            })
-          |>catch(_err => {
-            Js.log2("failed to fetch: ", _err);
-            Js.Promise.resolve();
-          })
-          |>ignore
-      );
-      None;
-    });
-
-
+    let picState = Hook.useFetch("./src/assets/contsprite.png");
 
     <section id="cont">
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">
           "CONTACT"->React.string
         </h2>
         <div className="flex flex-row justify-around items-center flex-wrap my-16 xl:mx-auto max-w-cont">
-            {switch (state) {
+            {switch (picState) {
               | LoadingImg => React.null
-              | LoadedImg(src) => 
-                links
-                    ->Belt.Array.map(({link, alt, off, w}) =>
-                        <Acct link alt off w src key=off->string_of_int/>)
-                    ->React.array;
+              | LoadedImg(src) =>
+                  links
+                      ->Belt.Array.map(({link, alt, off, w}) =>
+                          <Acct link alt off w src key=alt/>)
+                      ->React.array;
+              | Error(_) =>
+                  links
+                      ->Belt.Array.map(({link}) =>
+                          <a className="m-8 bord" rel="noopener noreferrer" href=link>
+                            link->React.string
+                          </a>)
+                      ->React.array;
               }
             }
             <div className="bg-pe bg-no-repeat bg-center bg-cover m-8 bord w-56 h-16">
