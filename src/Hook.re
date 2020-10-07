@@ -5,30 +5,32 @@ type state =
 | LoadedImg(string)
 | Error(string);
 
-let useFetch = path => {
+let useFetch = (start, path) => {
     let (state, setState) = React.useState(() => LoadingImg);
 
-    React.useEffect0(() => {
-      Js.Promise.(
-        fetch(path)
-          |>then_(response => {
-              if (response##ok) {
-                setState(_ => LoadedImg(response##url));
-              } else {
-                setState(_ => Error(""));
-                Js.log("failed to fetch " ++ response##url);
-              }
+    React.useEffect1(() => {
+      if (start) {
+        Js.Promise.(
+          fetch(path)
+            |>then_(response => {
+                if (response##ok) {
+                  setState(_ => LoadedImg(response##url));
+                } else {
+                  setState(_ => Error(""));
+                  Js.log("failed to fetch " ++ response##url);
+                }
+                Js.Promise.resolve();
+              })
+            |>catch(_err => {
+              setState(_ => Error(""));
+              Js.log2("failed to fetch: ", _err);
               Js.Promise.resolve();
             })
-          |>catch(_err => {
-            setState(_ => Error(""));
-            Js.log2("failed to fetch: ", _err);
-            Js.Promise.resolve();
-          })
-          |>ignore
-      );
+            |>ignore
+        );
+      }
       None;
-    });
+    }, [|start|]);
 
     state;
 };

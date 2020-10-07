@@ -8,8 +8,8 @@ let navLinks = [|
 [@react.component]
 let make = () => {
     let (selectedState, setSelectedState) = React.useState(() => -1);
-    let picState = Hook.useFetch("./src/assets/icons.png");
-    let resState = Hook.useFetch("./src/assets/resume.pdf");
+    let picState = Hook.useFetch(true, "./src/assets/icons.png");
+    let resState = Hook.useFetch(true, "./src/assets/resume.pdf");
 
     <footer className="fixed bg-dark-blue bottom-0 w-screen h-12 z-20">
         <nav className="my-0 h-full">

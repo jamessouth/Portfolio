@@ -1,41 +1,6 @@
-[%%raw {|
-window.onload = () => {
-   const sections = document.querySelectorAll('h2');
-console.log(sections);
-
-
-
-const idObserver = new IntersectionObserver((ents, obs) => {
-  ents.filter((entry) => entry.isIntersecting).forEach(({ target }) => {
-    //   console.log(target)
-
-    if (target.textContent == 'PORTFOLIO') {
-
-        console.log('port')
-    } else if (target.textContent == 'ARTICLES') {
-        console.log('art')
-    } else {
-        console.log('cont')
-    }
-
-    obs.unobserve(target);
-  });
-}, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1,
-});
-
-sections.forEach(s => idObserver.observe(s));
-
-}
-|}]
-
-
-
 [@react.component]
 let make = () => {
-    let picState = Hook.useFetch("./src/assets/wdksmall.png");
+    let picState = Hook.useFetch(true, "./src/assets/wdksmall.png");
 
     <section className="flex flex-row-reverse portrait:flex-col min-h-screen" id="about">
         <div className="bg-img-bg portrait:h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">

@@ -1,16 +1,21 @@
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
+    let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
+
+    let picState =
+    switch (isVisible) {
+    | false => Hook.useFetch(false, path)
+    | true => Hook.useFetch(true, path)
+    };
 
     let flexDir = (index) => {
       switch (index mod 2) {
       | 0 => ""
       | _ => "flex-row-reverse"
       }
-    }
+    };
 
-    let picState = Hook.useFetch(path);
-
-    <section
+    <section ref
       className={
         flexDir(i) ++ " flex portrait:flex-col portrait:min-h-screen landscape500:min-h-0"
       }

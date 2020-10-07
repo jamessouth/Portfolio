@@ -52,9 +52,15 @@ let links: array(contact) = [|
 
 [@react.component]
 let make = () => {
-    let picState = Hook.useFetch("./src/assets/contsprite.png");
+    let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
 
-    <section id="cont">
+    let picState =
+    switch (isVisible) {
+    | false => Hook.useFetch(false, "./src/assets/contsprite.png")
+    | true => Hook.useFetch(true, "./src/assets/contsprite.png")
+    };
+
+    <section ref id="cont">
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">
           "CONTACT"->React.string
         </h2>
