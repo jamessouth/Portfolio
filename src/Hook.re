@@ -7,9 +7,8 @@ type state =
 
 let useFetch = path => {
     let (state, setState) = React.useState(() => LoadingImg);
-    Js.log2("hook", path)
+
     React.useEffect0(() => {
-    Js.log("eff")
       Js.Promise.(
         fetch(path)
           |>then_(response => {
