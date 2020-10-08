@@ -6,7 +6,7 @@
     "server": "moduleserve ./ --port 3333",
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --collectCoverage",
     "watch:css": "postcss ./src/css/tailwind.css -o ./src/css/main.css"
   },
   "keywords": [
@@ -29,6 +29,7 @@
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "bs-platform": "^8.2.0",
+    "jest": "^26.5.2",
     "moduleserve": "^0.9.0",
     "postcss-cli": "^7.1.2",
     "tailwindcss": "^1.8.10"
