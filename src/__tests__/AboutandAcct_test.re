@@ -92,9 +92,4 @@ describe("Acct", () => {
     |> toHaveAttribute("src", ~value="fake.img")
   });
 
-
-
-
 });
-
-
