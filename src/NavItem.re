@@ -1,17 +1,18 @@
 [@react.component]
 let make = (
     ~alt,
-    ~cls,
+    ~aClass,
+    ~handleClick,
     ~href,
     ~id,
     ~rel,
-    ~selectedState,
+    ~liClass,
     ~src,
     ~target
     ) => {
         let off = id * -39;
-        <li className={selectedState - id == 0 ? "selected" : ""}>
-            <a className=cls href rel target>
+        <li className=liClass>
+            <a className=aClass href rel target onClick=id->handleClick>
                 <img
                     className="inline w-iconw h-iconh object-none"
                     src
@@ -20,7 +21,6 @@ let make = (
                         ~objectPosition=off->string_of_int ++ "px",
                         (),
                     )}
-                    id=id->string_of_int
                 />
             </a>
         </li>

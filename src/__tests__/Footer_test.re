@@ -1,15 +1,13 @@
 open Jest;
 open ReactTestingLibrary;
 open JestDom;
+open TestUtils
 
 describe("Footer", () => {
   
-  let rendered = render(<Article
-                          link="blog.org"
-                          alt="a book"
-                          obPos={-90}
-                          title="my article"
-                          src="art.png"
+  let rendered = render(<Footer
+                          picPath="test"
+                          resPath="test"
                         />);
 
   test("a click updates the state properly", () => {

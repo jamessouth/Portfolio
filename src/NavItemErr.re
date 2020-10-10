@@ -1,20 +1,21 @@
 [@react.component]
 let make = (
     ~backup,
-    ~cls,
+    ~aClass,
+    ~handleClick,
     ~href,
     ~id,
     ~rel,
-    ~selectedState,
+    ~liClass,
     ~target
     ) => {
-        <li className={selectedState - id == 0 ? "selected" : ""}>
+        <li className=liClass>
             <a
-                className={"text-3xl text-white " ++ cls}
+                className={"text-3xl text-white " ++ aClass}
                 href
                 rel
                 target
-                id=id->string_of_int
+                onClick=id->handleClick
             >
                 backup->React.string
             </a>
