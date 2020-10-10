@@ -4,9 +4,9 @@ open JestDom;
 
 test("About - name appears correctly", () =>
   render(<About />)
-  |> getByRole(~matcher=`Str("heading"))
+  |> getByRole(~matcher=`Str("heading"), _)
   |> expect
-  |> toHaveTextContent(`Str("James South"))
+  |> toHaveTextContent(`Str("James South"), _)
 );
 
 describe("Acct", () => {
@@ -27,7 +27,7 @@ describe("Acct", () => {
                           />);
 
     rendered
-    |> getByRole(~matcher=`Str("img"))
+    |> getByRole(~matcher=`Str("img"), _)
     |> expect
     |> toHaveAttribute("alt", ~value="a smile")
   });
@@ -42,7 +42,7 @@ describe("Acct", () => {
                           />);
 
     rendered
-    |> getByRole(~matcher=`Str("link"))
+    |> getByRole(~matcher=`Str("link"), _)
     |> expect
     |> toHaveAttribute("href", ~value="hello.org")
   });
@@ -57,7 +57,7 @@ describe("Acct", () => {
                           />);
 
     rendered
-    |> getByRole(~matcher=`Str("img"))
+    |> getByRole(~matcher=`Str("img"), _)
     |> expect
     |> toHaveStyle(`Obj({"object-position": "90px"}))
   });
@@ -72,7 +72,7 @@ describe("Acct", () => {
                           />);
 
     rendered
-    |> getByRole(~matcher=`Str("img"))
+    |> getByRole(~matcher=`Str("img"), _)
     |> expect
     |> toHaveStyle(`Obj({"width": "78px"}))
   });
@@ -87,7 +87,7 @@ describe("Acct", () => {
                           />);
 
     rendered
-    |> getByRole(~matcher=`Str("img"))
+    |> getByRole(~matcher=`Str("img"), _)
     |> expect
     |> toHaveAttribute("src", ~value="fake.img")
   });

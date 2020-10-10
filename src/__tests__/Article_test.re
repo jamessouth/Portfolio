@@ -2,30 +2,40 @@ open Jest;
 open ReactTestingLibrary;
 open JestDom;
 
-// test("About - name appears correctly", () =>
-//   render(<About />)
-//   |> getByRole(~matcher=`Str("heading"))
-//   |> expect
-//   |> toHaveTextContent(`Str("James South"))
-// );
-
 describe("Article", () => {
-  // test("has correct alt attr", () => {
-  //   let rendered = render(<Article
-  //                           link="blog.org"
-  //                           alt="a book"
-  //                           obPos={-90}
-  //                           title="my article"
-  //                           src="art.png"
-  //                         />);
+  let rendered = render(<Article
+                          link="blog.org"
+                          alt="a book"
+                          obPos={-90}
+                          title="my article"
+                          src="art.png"
+                        />);
 
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"))
-  //   |> expect
-  //   |> toHaveAttribute("alt", ~value="a book")
-  // });
+  test("has correct alt attr", () => {
+    rendered
+    |> getByRole(~matcher=`Str("img"), _)
+    |> expect
+    |> toHaveAttribute("alt", ~value="a book")
+  });
 
-  test("has correct href", () => {
+  let linkArr = rendered
+                |> getAllByRole(~matcher=`Str("link"), _);
+
+  testAll(
+    "links have correct href",
+    Array.to_list(linkArr),
+    link => link
+            |> expect
+            |> toHaveAttribute("href", ~value="blog.org")
+          );
+
+  test("has correct title", () => {
+    linkArr[1]
+    |> expect
+    |> toHaveTextContent(`Str("my article"), _)
+  });
+
+  test("has correct src", () => {
     let rendered = render(<Article
                             link="blog.org"
                             alt="a book"
@@ -34,57 +44,24 @@ describe("Article", () => {
                             src="art.png"
                           />);
 
-    let a = rendered
-    |> getAllByRole(~matcher=`Str("link"), _);
-
-    a[0]
+    rendered
+    |> getByRole(~matcher=`Str("img"), _)
     |> expect
-    |> toHaveAttribute("href", ~value="blog9.org")
+    |> toHaveAttribute("src", ~value="art.png")
   });
 
-  // test("has correct object position", () => {
-  //   let rendered = render(<Article
-  //                           link="blog.org"
-  //                           alt="a book"
-  //                           obPos={-90}
-  //                           title="my article"
-  //                           src="art.png"
-  //                         />);
+  test("has correct offset position", () => {
+    let rendered = render(<Article
+                            link="blog.org"
+                            alt="a book"
+                            obPos={-90}
+                            title="my article"
+                            src="art.png"
+                          />);
 
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"))
-  //   |> expect
-  //   |> toHaveStyle(`Obj({"object-position": "90px"}))
-  // });
-
-  // test("has correct title", () => {
-  //   let rendered = render(<Article
-  //                           link="blog.org"
-  //                           alt="a book"
-  //                           obPos={-90}
-  //                           title="my article"
-  //                           src="art.png"
-  //                         />);
-
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"))
-  //   |> expect
-  //   |> toHaveStyle(`Obj({"width": "78px"}))
-  // });
-
-  // test("has correct src", () => {
-  //   let rendered = render(<Article
-  //                           link="blog.org"
-  //                           alt="a book"
-  //                           obPos={-90}
-  //                           title="my article"
-  //                           src="art.png"
-  //                         />);
-
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"))
-  //   |> expect
-  //   |> toHaveAttribute("src", ~value="fake.img")
-  // });
-
+    rendered
+    |> getByRole(~matcher=`Str("img"), _)
+    |> expect
+    |> toHaveStyle(`Obj({"object-position": "0 -90px"}))
+  });
 });
