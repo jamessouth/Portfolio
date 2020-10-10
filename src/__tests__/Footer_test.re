@@ -4,20 +4,20 @@ open JestDom;
 
 describe("Footer", () => {
   
-  // let rendered = render(<Article
-  //                         link="blog.org"
-  //                         alt="a book"
-  //                         obPos={-90}
-  //                         title="my article"
-  //                         src="art.png"
-  //                       />);
+  let rendered = render(<Article
+                          link="blog.org"
+                          alt="a book"
+                          obPos={-90}
+                          title="my article"
+                          src="art.png"
+                        />);
 
-  // test("has correct alt attr", () => {
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"), _)
-  //   |> expect
-  //   |> toHaveAttribute("alt", ~value="a book")
-  // });
+  test("a click updates the state properly", () => {
+    rendered
+    |> getByRole(~matcher=`Str("img"), _)
+    |> expect
+    |> toHaveAttribute("alt", ~value="a book")
+  });
 
   // let linkArr = rendered
   //               |> getAllByRole(~matcher=`Str("link"), _);

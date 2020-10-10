@@ -2,7 +2,7 @@
 let make = () => {
     <>
         <main>
-            <About/>
+            <About path="./src/assets/wdksmall.png"/>
             <Port/>
             <Articles/>
             <Contact/>

@@ -1,15 +1,15 @@
 [@react.component]
-let make = () => {
-    // let picState = Hook.useFetch(true, "./src/assets/wdksmall.png");
+let make = (~path) => {
+    let picState = Hook.useFetch(true, path);
 
     <section className="flex flex-row-reverse portrait:flex-col min-h-screen" id="about">
         <div className="bg-img-bg portrait:h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
-                // src={switch (picState) {
-                //       | Error(_)
-                //       | LoadingImg => ""
-                //       | LoadedImg(src) => src
-                // }}
+                src={switch (picState) {
+                      | Error(_)
+                      | LoadingImg => ""
+                      | LoadedImg(src) => src
+                }}
                 className="h-full object-cover object-left w-full"
                 alt="a web dev's desk and laptop"
             />

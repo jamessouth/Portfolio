@@ -8,8 +8,8 @@ let navLinks = [|
 [@react.component]
 let make = () => {
     let (selectedState, setSelectedState) = React.useState(() => -1);
-    let picState = Hook.useFetch(true, "./src/assets/icons.png");
-    let resState = Hook.useFetch(true, "./src/assets/resume.pdf");
+    // let picState = Hook.useFetch(true, "./src/assets/icons.png");
+    // let resState = Hook.useFetch(true, "./src/assets/resume.pdf");
 
     <footer className="fixed bg-dark-blue bottom-0 w-screen h-12 z-20">
         <nav className="my-0 h-full">
@@ -22,64 +22,64 @@ let make = () => {
                 }
               }}
             >
-                {
-                  switch (picState) {
-                  | LoadingImg => React.null
-                  | LoadedImg(src) =>
-                  <>
-                    {
-                      navLinks
-                        ->Belt.Array.mapWithIndex((id, (alt, href, rel, target, cls, _)) => 
-                            <NavItem alt cls href id rel selectedState src target key=alt/>)
-                        ->React.array;
-                    }
-                    {
-                      switch (resState) {
-                      | Error(_)
-                      | LoadingImg => React.null
-                      | LoadedImg(href) =>
-                          <NavItem
-                            alt="CV"
-                            cls="sm:newwindow"
-                            href
-                            id=4
-                            rel="noopener noreferrer"
-                            selectedState
-                            src
-                            target="_blank"
-                            key="CV"
-                          />;
-                      }
-                    }
-                  </>
-                  | Error(_) =>
-                  <>
-                    {
-                      navLinks
-                        ->Belt.Array.mapWithIndex((id, (_, href, rel, target, cls, backup)) => 
-                            <NavItemErr backup cls href id rel selectedState target key=href/>)
-                        ->React.array;
-                    }
-                    {
-                      switch (resState) {
-                      | Error(_)
-                      | LoadingImg => React.null
-                      | LoadedImg(href) =>
-                          <NavItemErr
-                            backup="CV"
-                            cls="sm:newwindow"
-                            href
-                            id=4
-                            rel="noopener noreferrer"
-                            selectedState
-                            target="_blank"
-                            key=href
-                          />;
-                      }
-                    }
-                  </>
-                  }
-                }
+                // {
+                //   switch (picState) {
+                //   | LoadingImg => React.null
+                //   | LoadedImg(src) =>
+                //   <>
+                //     {
+                //       navLinks
+                //         ->Belt.Array.mapWithIndex((id, (alt, href, rel, target, cls, _)) => 
+                //             <NavItem alt cls href id rel selectedState src target key=alt/>)
+                //         ->React.array;
+                //     }
+                //     {
+                //       switch (resState) {
+                //       | Error(_)
+                //       | LoadingImg => React.null
+                //       | LoadedImg(href) =>
+                //           <NavItem
+                //             alt="CV"
+                //             cls="sm:newwindow"
+                //             href
+                //             id=4
+                //             rel="noopener noreferrer"
+                //             selectedState
+                //             src
+                //             target="_blank"
+                //             key="CV"
+                //           />;
+                //       }
+                //     }
+                //   </>
+                //   | Error(_) =>
+                //   <>
+                //     {
+                //       navLinks
+                //         ->Belt.Array.mapWithIndex((id, (_, href, rel, target, cls, backup)) => 
+                //             <NavItemErr backup cls href id rel selectedState target key=href/>)
+                //         ->React.array;
+                //     }
+                //     {
+                //       switch (resState) {
+                //       | Error(_)
+                //       | LoadingImg => React.null
+                //       | LoadedImg(href) =>
+                //           <NavItemErr
+                //             backup="CV"
+                //             cls="sm:newwindow"
+                //             href
+                //             id=4
+                //             rel="noopener noreferrer"
+                //             selectedState
+                //             target="_blank"
+                //             key=href
+                //           />;
+                //       }
+                //     }
+                //   </>
+                //   }
+                // }
             </ul>
         </nav>
     </footer>

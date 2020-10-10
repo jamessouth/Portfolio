@@ -2,13 +2,6 @@ open Jest;
 open ReactTestingLibrary;
 open JestDom;
 
-test("About - name appears correctly", () =>
-  render(<About />)
-  |> getByRole(~matcher=`Str("heading"), _)
-  |> expect
-  |> toHaveTextContent(`Str("James South"), _)
-);
-
 describe("Acct", () => {
   let fakeLink: Portfolio.Contact.contact = {
     link: "hello.org",

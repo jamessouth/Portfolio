@@ -36,5 +36,9 @@
     "moduleserve": "^0.9.0",
     "postcss-cli": "^7.1.2",
     "tailwindcss": "^1.8.10"
+  },
+  "jest": {
+    "testMatch": ["**/About_test.bs.js"],
+    "testPathIgnorePatterns": ["TestUtils"]
   }
 }
