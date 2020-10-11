@@ -1,66 +1,72 @@
 open Jest;
 open ReactTestingLibrary;
 open JestDom;
-open TestUtils
+open TestUtils;
 
-describe("Footer", () => {
-  
+describe("Footer - pic path good", () => {
+  test("5 NavItems displayed", () => {
+    let rendered = render(<Footer
+                            picPath="test"
+                            resPath="test"
+                          />);
+
+    let navItemArr = rendered
+                  |> getAllByRole(~matcher=`Str("img"), _);
+
+    render(<p role="para">{navItemArr->Array.length->React.int}</p>)
+    |> getByRole(~matcher=`Str("para"), _)
+    |> expect
+    |> toHaveTextContent(`Str("5"), _)
+  });
+});
+
+describe("Footer - pic path error", () => {
   let rendered = render(<Footer
-                          picPath="test"
+                          picPath="error"
                           resPath="test"
                         />);
 
-  test("a click updates the state properly", () => {
-    rendered
-    |> getByRole(~matcher=`Str("img"), _)
+  let navItemArr = rendered
+                |> getAllByRole(~matcher=`Str("link"), _);
+
+  testAll(
+  "5 NavItemErrs displayed",
+  Array.to_list(navItemArr),
+  link => link
+          |> expect
+          |> toHaveClass(`Str("text-white"), _)
+        );
+});
+
+describe("Footer - res path good", () => {
+  test("CV link good", () => {
+    let rendered = render(<Footer
+                            picPath="test"
+                            resPath="test"
+                          />);
+
+    let navItemArr = rendered
+                  |> getAllByRole(~matcher=`Str("link"), _);
+
+    navItemArr[4]
     |> expect
-    |> toHaveAttribute("alt", ~value="a book")
+    |> toHaveAttribute("href", ~value="test")
   });
+});
 
-  // let linkArr = rendered
-  //               |> getAllByRole(~matcher=`Str("link"), _);
+describe("Footer - res path error", () => {
+  test("4 NavItems displayed", () => {
+    let rendered = render(<Footer
+                            picPath="test"
+                            resPath="error"
+                          />);
 
-  // testAll(
-  //   "links have correct href",
-  //   Array.to_list(linkArr),
-  //   link => link
-  //           |> expect
-  //           |> toHaveAttribute("href", ~value="blog.org")
-  //         );
+    let navItemArr = rendered
+                  |> getAllByRole(~matcher=`Str("link"), _);
 
-  // test("has correct title", () => {
-  //   linkArr[1]
-  //   |> expect
-  //   |> toHaveTextContent(`Str("my article"), _)
-  // });
-
-  // test("has correct src", () => {
-  //   let rendered = render(<Article
-  //                           link="blog.org"
-  //                           alt="a book"
-  //                           obPos={-90}
-  //                           title="my article"
-  //                           src="art.png"
-  //                         />);
-
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"), _)
-  //   |> expect
-  //   |> toHaveAttribute("src", ~value="art.png")
-  // });
-
-  // test("has correct offset position", () => {
-  //   let rendered = render(<Article
-  //                           link="blog.org"
-  //                           alt="a book"
-  //                           obPos={-90}
-  //                           title="my article"
-  //                           src="art.png"
-  //                         />);
-
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"), _)
-  //   |> expect
-  //   |> toHaveStyle(`Obj({"object-position": "0 -90px"}))
-  // });
+    render(<p role="para">{navItemArr->Array.length->React.int}</p>)
+    |> getByRole(~matcher=`Str("para"), _)
+    |> expect
+    |> toHaveTextContent(`Str("4"), _)
+  });
 });

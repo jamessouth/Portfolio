@@ -5,10 +5,6 @@ let navLinks = [|
   ("contact icon", "#cont", "", "", "", "C"),
 |];
 
-
-
-
-
 [@react.component]
 let make = (~picPath, ~resPath) => {
     let (selectedState, setSelectedState) = React.useState(() => -1);

@@ -12,6 +12,8 @@ let useFetch = (start, path) => {
       if (start) {
         if (path == "test") {
           setState(_ => LoadedImg(path));
+        } else if (path == "error") {
+          setState(_ => Error(""));
         } else {
           Js.Promise.(
             fetch(path)

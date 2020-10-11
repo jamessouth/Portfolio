@@ -20,4 +20,13 @@ describe("About", () => {
     |> expect
     |> toHaveAttribute("src", ~value="test")
   });
+
+  test("has correct src on error", () => {
+    let rendered = render(<About path="error"/>);
+
+    rendered
+    |> getByRole(~matcher=`Str("img"), _)
+    |> expect
+    |> toHaveAttribute("src", ~value="")
+  });
 });

@@ -4,8 +4,6 @@ let paths = Js.Dict.fromArray([|
     ("footRes", "./src/assets/resume.pdf"),
 |]);
 
-
-
 let file = (dict, key) => dict->Js.Dict.unsafeGet(key);
 let filePath = file(paths);
 
