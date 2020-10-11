@@ -1,7 +1,6 @@
 open Jest;
 open ReactTestingLibrary;
 open JestDom;
-open TestUtils;
 
 describe("Footer - pic path good", () => {
   test("5 NavItems displayed", () => {
