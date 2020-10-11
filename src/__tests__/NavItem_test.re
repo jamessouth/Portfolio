@@ -7,7 +7,7 @@ describe("NavItem", () => {
   let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=7
                           rel="noref"
@@ -27,7 +27,7 @@ describe("NavItem", () => {
       let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=7
                           rel="noref"
@@ -46,7 +46,7 @@ describe("NavItem", () => {
       let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=7
                           rel="noref"
@@ -65,7 +65,7 @@ describe("NavItem", () => {
       let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=10
                           rel="noref"
@@ -84,7 +84,7 @@ describe("NavItem", () => {
       let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=10
                           rel="noref"
@@ -103,7 +103,7 @@ describe("NavItem", () => {
       let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=10
                           rel="noref"
@@ -122,7 +122,7 @@ describe("NavItem", () => {
       let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=10
                           rel="noref"
@@ -141,7 +141,7 @@ describe("NavItem", () => {
       let rendered = render(<NavItem
                           alt="home"
                           aClass="red"
-                          handleClick={(i, _e) => ()}
+                          handleClick={(_, _e) => ()}
                           href="about"
                           id=10
                           rel="noref"
@@ -156,7 +156,17 @@ describe("NavItem", () => {
     |> toHaveAttribute("target", ~value="blank")
   });
 
+  testPromise("click adds a class", () => {
+    let rendered = render(<Footer
+                            picPath="test"
+                            resPath="test"
+                            navLinks=[||]
+                          />);
+
+    rendered
+    |> findByRole(~matcher=`Str("link"), _)
+    |> Promise.map(link => act(() => link |> Event.click))
+    |> Promise.flatMap(() => rendered |> findByRole(~matcher=`Str("listitem"), _))
+    |> Promise.map(el => expect(el) |> toHaveClass(`Str("selected"), _))
+  });
 });
-
-
-

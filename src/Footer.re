@@ -1,12 +1,5 @@
-let navLinks = [|
-  ("JS", "#about", "", "", "", "JS"),
-  ("portfolio icon", "#port", "", "", "", "P"),
-  ("articles icon", "#articles", "", "", "", "A"),
-  ("contact icon", "#cont", "", "", "", "C"),
-|];
-
 [@react.component]
-let make = (~picPath, ~resPath) => {
+let make = (~picPath, ~resPath, ~navLinks) => {
     let (selectedState, setSelectedState) = React.useState(() => -1);
     let picState = Hook.useFetch(true, picPath);
     let resState = Hook.useFetch(true, resPath);
