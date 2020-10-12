@@ -2,11 +2,19 @@ open Jest;
 open ReactTestingLibrary;
 open JestDom;
 
+let navLinks=[|
+  ("JS", "#about", "", "", "", "JS"),
+  ("portfolio icon", "#port", "", "", "", "P"),
+  ("articles icon", "#articles", "", "", "", "A"),
+  ("contact icon", "#cont", "", "", "", "C"),
+|];
+
 describe("Footer - pic path good", () => {
   test("5 NavItems displayed", () => {
     let rendered = render(<Footer
                             picPath="test"
                             resPath="test"
+                            navLinks
                           />);
 
     let navItemArr = rendered
@@ -23,6 +31,7 @@ describe("Footer - pic path error", () => {
   let rendered = render(<Footer
                           picPath="error"
                           resPath="test"
+                          navLinks
                         />);
 
   let navItemArr = rendered
@@ -42,6 +51,7 @@ describe("Footer - res path good", () => {
     let rendered = render(<Footer
                             picPath="test"
                             resPath="test"
+                            navLinks
                           />);
 
     let navItemArr = rendered
@@ -58,6 +68,7 @@ describe("Footer - res path error", () => {
     let rendered = render(<Footer
                             picPath="test"
                             resPath="error"
+                            navLinks
                           />);
 
     let navItemArr = rendered
