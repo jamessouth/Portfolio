@@ -13,8 +13,6 @@ module Promise = {
 
 module Event = {
   let click = FireEvent.click(~eventInit=?None);
-
-  let focus = FireEvent.focus(~eventInit=?None);
 };
 
 

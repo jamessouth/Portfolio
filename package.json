@@ -38,7 +38,6 @@
     "tailwindcss": "^1.8.10"
   },
   "jest": {
-    "testMatch": ["**/Project_test.bs.js"],
     "testPathIgnorePatterns": ["TestUtils"]
   }
 }

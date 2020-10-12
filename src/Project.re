@@ -17,7 +17,7 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
       }
     };
 
-    <section
+    <section role="region"
       // ref
       className={
         flexDir(i) ++ " flex portrait:flex-col portrait:min-h-screen landscape500:min-h-0"
