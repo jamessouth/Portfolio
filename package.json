@@ -38,7 +38,7 @@
     "tailwindcss": "^1.8.10"
   },
   "jest": {
-    "testMatch": ["**/NavItemErr_test.bs.js"],
+    "testMatch": ["**/Project_test.bs.js"],
     "testPathIgnorePatterns": ["TestUtils"]
   }
 }

@@ -1,6 +1,8 @@
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
-    let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
+    // let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
+    
+    let isVisible = true;
 
     let picState =
     switch (isVisible) {
@@ -15,7 +17,8 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
       }
     };
 
-    <section ref
+    <section
+      // ref
       className={
         flexDir(i) ++ " flex portrait:flex-col portrait:min-h-screen landscape500:min-h-0"
       }
