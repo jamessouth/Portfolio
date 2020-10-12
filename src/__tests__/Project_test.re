@@ -68,20 +68,91 @@ describe("Project", () => {
     |> toHaveAttribute("href", ~value="here")
   });
 
-  // test("has correct src", () => {
-  //   let rendered = render(<Article
-  //                           link="blog.org"
-  //                           alt="a book"
-  //                           obPos={-90}
-  //                           title="my article"
-  //                           src="art.png"
-  //                         />);
+    test("1 link if no live site", () => {
+    let rendered = render(<Project
+                        title="myProj"
+                        live=None
+                        code="there"
+                        alt="cards"
+                        text="long string"
+                        liveAria="go to live"
+                        codeAria="go to code"
+                        path="test"
+                        i=7
+                        obPos="center"
+                      />);
 
-  //   rendered
-  //   |> getByRole(~matcher=`Str("img"), _)
-  //   |> expect
-  //   |> toHaveAttribute("src", ~value="art.png")
-  // });
+    let linkArr = rendered
+                  |> getAllByRole(~matcher=`Str("link"), _);
+
+    render(<p role="para">{linkArr->Array.length->React.int}</p>)
+    |> getByRole(~matcher=`Str("para"), _)
+    |> expect
+    |> toHaveTextContent(`Str("1"), _)
+  });
+
+    test("code link has correct href", () => {
+    let rendered = render(<Project
+                        title="myProj"
+                        live=Some("here")
+                        code="there"
+                        alt="cards"
+                        text="long string"
+                        liveAria="go to live"
+                        codeAria="go to code"
+                        path="test"
+                        i=7
+                        obPos="center"
+                      />);
+
+    let linkArr = rendered
+                  |> getAllByRole(~matcher=`Str("link"), _);
+
+    linkArr[0]
+    |> expect
+    |> toHaveAttribute("href", ~value="there")
+  });
+
+  test("has correct alt", () => {
+    let rendered = render(<Project
+                        title="myProj"
+                        live=Some("here")
+                        code="there"
+                        alt="cards"
+                        text="long string"
+                        liveAria="go to live"
+                        codeAria="go to code"
+                        path="test"
+                        i=7
+                        obPos="center"
+                      />);
+
+    rendered
+    |> getByRole(~matcher=`Str("img"), _)
+    |> expect
+    |> toHaveAttribute("alt", ~value="cards")
+  });
+
+
+  test("displays correct body text", () => {
+    let rendered = render(<Project
+                            title="myProj"
+                            live=Some("here")
+                            code="there"
+                            alt="cards"
+                            text="long string"
+                            liveAria="go to live"
+                            codeAria="go to code"
+                            path="test"
+                            i=7
+                            obPos="center"
+                          />);
+
+    rendered
+    |> getByRole(~matcher=`Str("text"), _)
+    |> expect
+    |> toHaveTextContent(`Str("long string"), _)
+  });
 
   // test("has correct offset position", () => {
   //   let rendered = render(<Article
