@@ -1,12 +1,8 @@
 [@react.component]
-let make = () => {
+let make = (~path) => {
     let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
 
-    let picState =
-    switch (isVisible) {
-    | false => Hook.useFetch(false, "./src/assets/arts.jpg")
-    | true => Hook.useFetch(true, "./src/assets/arts.jpg")
-    };
+    let picState = Hook.useFetch(isVisible, path);
 
     <section ref id="articles">
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">

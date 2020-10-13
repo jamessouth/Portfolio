@@ -51,14 +51,10 @@ let links: array(contact) = [|
 |];
 
 [@react.component]
-let make = () => {
+let make = (~path) => {
     let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
 
-    let picState =
-    switch (isVisible) {
-    | false => Hook.useFetch(false, "./src/assets/contsprite.png")
-    | true => Hook.useFetch(true, "./src/assets/contsprite.png")
-    };
+    let picState = Hook.useFetch(isVisible, path);
 
     <section ref id="cont">
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">

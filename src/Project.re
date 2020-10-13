@@ -4,11 +4,7 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
     
     let isVisible = true;
 
-    let picState =
-    switch (isVisible) {
-    | false => Hook.useFetch(false, path)
-    | true => Hook.useFetch(true, path)
-    };
+    let picState = Hook.useFetch(isVisible, path);
 
     let flexDir = (index) => {
       switch (index mod 2) {

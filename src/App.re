@@ -1,5 +1,7 @@
 let paths = Js.Dict.fromArray([|
     ("about", "./src/assets/wdksmall.png"),
+    ("articles", "./src/assets/arts.jpg"),
+    ("contact", "./src/assets/contsprite.png"),
     ("footPic", "./src/assets/icons.png"),
     ("footRes", "./src/assets/resume.pdf"),
 |]);
@@ -22,8 +24,12 @@ let make = () => {
                 path=filePath("about")
             />
             <Port/>
-            <Articles/>
-            <Contact/>
+            <Articles
+                path=filePath("articles")
+            />
+            <Contact
+                path=filePath("contact")
+            />
         </main>
         <Footer
             picPath=filePath("footPic")

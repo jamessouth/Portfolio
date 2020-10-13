@@ -90,11 +90,8 @@ let projects: array(project) = [|
   },
 |];
 
-
 [@react.component]
 let make = () => {
-
-
     <section id="port">
           <h2 className="font-forum text-5xl px-0 py-12 portrait:mb-16 text-center tracking-wider border-solid border-eerie-black border-t border-b">
             "PORTFOLIO"->React.string
