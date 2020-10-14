@@ -1,10 +1,10 @@
 [@react.component]
 let make = (~links: array(Types.contact), ~path) => {
-    let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
+    // let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
 
-    let picState = Hook.useFetch(isVisible, path);
+    let picState = Hook.useFetch(true, path);
 
-    <section ref id="cont">
+    <section id="cont">
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">
           "CONTACT"->React.string
         </h2>
