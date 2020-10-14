@@ -3,7 +3,7 @@ open ReactTestingLibrary;
 open JestDom;
 
 describe("Acct", () => {
-  let fakeLink: Portfolio.Contact.contact = {
+  let fakeLink: Types.contact = {
     link: "hello.org",
     alt: "a smile",
     off: 90,

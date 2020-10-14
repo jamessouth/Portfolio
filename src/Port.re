@@ -1,17 +1,5 @@
-type project = {
-    title: string,
-    live: option(string),
-    code: string,
-    path: string,
-    obPos: string,
-    alt: string,
-    text: string,
-    liveAria: string,
-    codeAria: string,
-};
-
 [@react.component]
-let make = (~projects) => {
+let make = (~projects: array(Types.project)) => {
     <section id="port">
           <h2 className="font-forum text-5xl px-0 py-12 portrait:mb-16 text-center tracking-wider border-solid border-eerie-black border-t border-b">
             "PORTFOLIO"->React.string

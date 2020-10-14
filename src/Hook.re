@@ -10,11 +10,11 @@ let useFetch = (start, path) => {
 
     React.useEffect1(() => {
       if (start) {
-        if (path == "test") {
-          setState(_ => LoadedImg(path));
-        } else if (path == "error") {
-          setState(_ => Error(""));
-        } else {
+        // if (path == "test") {
+        //   setState(_ => LoadedImg(path));
+        // } else if (path == "error") {
+        //   setState(_ => Error(""));
+        // } else {
           Js.Promise.(
             fetch(path)
               |>then_(response => {
@@ -33,7 +33,7 @@ let useFetch = (start, path) => {
               })
               |>ignore
           );
-        }
+        // }
       }
       None;
     }, [|start|]);

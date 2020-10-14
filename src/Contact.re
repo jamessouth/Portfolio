@@ -1,12 +1,5 @@
-type contact = {
-    link: string,
-    alt: string,
-    off: int,
-    w: int,
-};
-
 [@react.component]
-let make = (~links, ~path) => {
+let make = (~links: array(Types.contact), ~path) => {
     let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
 
     let picState = Hook.useFetch(isVisible, path);
