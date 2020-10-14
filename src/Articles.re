@@ -1,47 +1,34 @@
-[@bs.val] external document : Dom.document = "document";
-[@bs.send.pipe : Dom.document ] [@bs.return nullable] external querySelector : string => option(Dom.element) = "querySelector";
+
 
 [@react.component]
-let make = (~path) => {
+let make = (~path, ~id) => {
+
+Js.log("arts comp");
+
+ 
+      // Belt.Option.map(sec, x => Js.log(x));
 
 
-    let el = switch (document |> querySelector("#articles")) {
-        | Some(el) => el
-        | None => 
-    }
+      // switch (sec) {
+      // | None => ()
+      // | Some(el) => {
+      //     Js.log(el);
+
+
+       
+        // IntersectionObserver.unobserve(observer, el);
+        // IntersectionObserver.observe(observer, el);
+        // IntersectionObserver.disconnect(observer);
+
+      //     ();
+      //   };
+      // };
     
+    Js.log(Hook.useVisible(id));
 
-    
-    let handler =
-  (. entries, observer) => {
-    Js.Array.forEach(entry => {
-      Js.log(IntersectionObserverEntry.time(entry));
-      Js.log(IntersectionObserverEntry.rootBounds(entry));
-      Js.log(IntersectionObserverEntry.boundingClientRect(entry));
-      Js.log(IntersectionObserverEntry.intersectionRect(entry));
-      Js.log(IntersectionObserverEntry.isIntersecting(entry));
-      Js.log(IntersectionObserverEntry.intersectionRatio(entry));
-      Js.log(IntersectionObserverEntry.target(entry));
-    }, entries);
+    let picState = Hook.useFetch(false, path);
 
-    IntersectionObserver.unobserve(observer, el);
-  };
-
-let observer =
-  IntersectionObserver.make(handler);
-
-IntersectionObserver.observe(observer, el);
-IntersectionObserver.unobserve(observer, el);
-IntersectionObserver.observe(observer, el);
-IntersectionObserver.disconnect(observer);
-
-
-
-
-
-    let picState = Hook.useFetch(true, path);
-
-    <section id="articles">
+    <section id>
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-eerie-black border-t border-b">
             "ARTICLES"->React.string
         </h2>

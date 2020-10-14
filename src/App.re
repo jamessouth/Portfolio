@@ -13,6 +13,7 @@ let make = () => {
             />
             <Articles
                 path=filePath("articles")
+                id="articles"
             />
             <Contact
                 links=Data.links
