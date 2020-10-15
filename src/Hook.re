@@ -51,24 +51,35 @@ let useFetch = (start, path) => {
 
 let useVisible = id => {
   let (visibleState, setVisibleState) = React.useState(() => false);
-  let obs = React.useRef();
+  // let obs = React.useRef();
 
 
-  React.useEffect0(() => {
-    let el = document->getElementById(id);
 
     let ioMapFunc = el => {
-      let handler = (. entries, _) => {
-            Js.Array.forEach(entry => {
-              setVisibleState(_ => IntersectionObserverEntry.isIntersecting(entry));
-            }, entries);
-          };
+      let handler = (. entries, observer) => {
+      
+          entries->Belt.Array.forEach(entry => {
+              setVisibleState(p => {
+                Js.log2("pre", p);
+                let seen = IntersectionObserverEntry.isIntersecting(entry);
+                if (p) {
+                  unobserve(observer, el);
+                }
+                seen;
+              });
+           
+                
+          });
+      };
           
           let observer = handler->make;
           observe(observer, el);
-          
+          Js.log2("ob", visibleState);
           
     };
+  React.useEffect0(() => {
+    let el = document->getElementById(id);
+    Js.log("eff");
     let _ = Belt.Option.map(el, ioMapFunc);
     None;
   });
