@@ -18,6 +18,7 @@ let make = () => {
             <Contact
                 links=Data.links
                 path=filePath("contact")
+                id="cont"
             />
         </main>
         <Footer

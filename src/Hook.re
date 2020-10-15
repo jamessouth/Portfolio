@@ -9,7 +9,6 @@ type fetchState =
 | LoadedImg(string)
 | Error(string);
 
-
 let useFetch = (start, path) => {
     let (fetchState, setFetchState) = React.useState(() => LoadingImg);
 
@@ -52,12 +51,13 @@ let useVisible = id => {
 
     let ioMapFunc = el => {
         let handler = (. entry, observer) => {
-            setVisibleState(_ => {
+            setVisibleState(p => {
                 obsCount.current = obsCount.current + 1;
+                Js.log2(obsCount, p);
                 if (obsCount.current == 2) {
                     unobserve(observer, el);
                 }
-                IntersectionObserverEntry.isIntersecting(entry[0]);
+                isIntersecting(entry[0]);
             });
         };
         handler->make->observe(el);
