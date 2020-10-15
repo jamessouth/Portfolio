@@ -23,8 +23,8 @@ Js.log("arts comp");
       //     ();
       //   };
       // };
-    
-    Js.log(Hook.useVisible(id));
+    let visState = Hook.useVisible(id);
+    Js.log(visState);
 
     let picState = Hook.useFetch(false, path);
 
