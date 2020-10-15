@@ -2,8 +2,6 @@
 let make = (~links: array(Types.contact), ~path, ~id) => {
     let visState = Hook.useVisible(id);
 
-    Js.log2("cont comp", visState);
-
     let picState = Hook.useFetch(visState, path);
 
     <section id>

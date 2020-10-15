@@ -2,8 +2,6 @@
 let make = (~path, ~id) => {
     let visState = Hook.useVisible(id);
 
-    Js.log2("arts comp", visState);
-
     let picState = Hook.useFetch(visState, path);
 
     <section id>

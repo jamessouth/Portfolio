@@ -1,8 +1,8 @@
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
-    // let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
+    let visState = Hook.useVisible(title);
 
-    let picState = Hook.useFetch(true, path);
+    let picState = Hook.useFetch(visState, path);
 
     let flexDir = (index) => {
       switch (index mod 2) {
@@ -11,8 +11,7 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
       }
     };
 
-    <section
-      // ref
+    <section id=title
       className={
         flexDir(i) ++ " flex portrait:flex-col portrait:min-h-screen landscape500:min-h-0"
       }

@@ -51,9 +51,8 @@ let useVisible = id => {
 
     let ioMapFunc = el => {
         let handler = (. entry, observer) => {
-            setVisibleState(p => {
+            setVisibleState(_ => {
                 obsCount.current = obsCount.current + 1;
-                Js.log2(obsCount, p);
                 if (obsCount.current == 2) {
                     unobserve(observer, el);
                 }
