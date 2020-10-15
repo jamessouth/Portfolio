@@ -51,10 +51,11 @@ let useFetch = (start, path) => {
 
 let useVisible = id => {
   let (visibleState, setVisibleState) = React.useState(() => false);
+  let obs = React.useRef();
 
 
   React.useEffect0(() => {
-  let el = document->getElementById(id);
+    let el = document->getElementById(id);
 
     let ioMapFunc = el => {
       let handler = (. entries, _) => {
@@ -62,8 +63,11 @@ let useVisible = id => {
               setVisibleState(_ => IntersectionObserverEntry.isIntersecting(entry));
             }, entries);
           };
-          let observer = make(handler);
+          
+          let observer = handler->make;
           observe(observer, el);
+          
+          
     };
     let _ = Belt.Option.map(el, ioMapFunc);
     None;
