@@ -9,9 +9,6 @@ type fetchState =
 | LoadedImg(string)
 | Error(string);
 
-// type visibleState = 
-// | UnSeen
-// | Seen;
 
 let useFetch = (start, path) => {
     let (fetchState, setFetchState) = React.useState(() => LoadingImg);
@@ -50,42 +47,27 @@ let useFetch = (start, path) => {
 };
 
 let useVisible = id => {
-  let (visibleState, setVisibleState) = React.useState(() => false);
-  // let obs = React.useRef();
-
-
+    let (visibleState, setVisibleState) = React.useState(() => false);
+    let obsCount = React.useRef(0);
 
     let ioMapFunc = el => {
-      let handler = (. entries, observer) => {
-      
-          entries->Belt.Array.forEach(entry => {
-              setVisibleState(p => {
-                Js.log2("pre", p);
-                let seen = IntersectionObserverEntry.isIntersecting(entry);
-                if (p) {
-                  unobserve(observer, el);
+        let handler = (. entry, observer) => {
+            setVisibleState(_ => {
+                obsCount.current = obsCount.current + 1;
+                if (obsCount.current == 2) {
+                    unobserve(observer, el);
                 }
-                seen;
-              });
-           
-                
-          });
-      };
-          
-          let observer = handler->make;
-          observe(observer, el);
-          Js.log2("ob", visibleState);
-          
+                IntersectionObserverEntry.isIntersecting(entry[0]);
+            });
+        };
+        handler->make->observe(el);
     };
-  React.useEffect0(() => {
-    let el = document->getElementById(id);
-    Js.log("eff");
-    let _ = Belt.Option.map(el, ioMapFunc);
-    None;
-  });
 
-  visibleState;
+    React.useEffect0(() => {
+        let el = document->getElementById(id);
+        let _ = Belt.Option.map(el, ioMapFunc);
+        None;
+    });
+
+    visibleState;
 };
-
-
-
