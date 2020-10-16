@@ -123,6 +123,6 @@ describe("NavItemErr", () => {
     |> findByRole(~matcher=`Str("link"), _)
     |> Promise.map(link => act(() => link |> Event.click))
     |> Promise.flatMap(() => rendered |> findByRole(~matcher=`Str("listitem"), _))
-    |> Promise.map(el => expect(el) |> toHaveClass(`Str("selected"), _))
+    |> Promise.map(el => expect(el) |> toHaveClass(`Str("filter-invert-92"), _))
   });
 });

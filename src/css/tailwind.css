@@ -94,12 +94,14 @@
     .bord{
         @apply border-2 border-solid border-transparent;
     }
-    .selected{
-        filter: invert(.92);
-    }
 }
 @tailwind utilities;
-@layer utilities {
+@layer utilities{
+    @variants focus-within, hover{
+        .filter-invert-92{
+            filter: invert(.92);
+        }
+    }
     @responsive{
         .newwindow::after{
             content: '';

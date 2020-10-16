@@ -9,7 +9,7 @@ let make = (
     ~liClass,
     ~target
     ) => {
-        <li className=liClass>
+        <li className={"focus-within:filter-invert-92 hover:filter-invert-92 " ++ liClass}>
             <a
                 className={"text-3xl text-white " ++ aClass}
                 href

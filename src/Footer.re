@@ -19,7 +19,7 @@ let make = (~picPath, ~resPath, ~navLinks) => {
                     {
                       navLinks
                         ->Belt.Array.mapWithIndex((id, (alt, href, rel, target, aClass, _)) => 
-                            <NavItem alt aClass href id rel src target handleClick liClass={selectedState - id == 0 ? "selected" : ""} key=alt/>)
+                            <NavItem alt aClass href id rel src target handleClick liClass={selectedState - id == 0 ? "filter-invert-92" : ""} key=alt/>)
                         ->React.array;
                     }
                     {
@@ -34,7 +34,7 @@ let make = (~picPath, ~resPath, ~navLinks) => {
                             id=4
                             rel="noopener noreferrer"
                             handleClick
-                            liClass={selectedState - 4 == 0 ? "selected" : ""}
+                            liClass={selectedState - 4 == 0 ? "filter-invert-92" : ""}
                             src
                             target="_blank"
                             key="CV"
@@ -47,7 +47,7 @@ let make = (~picPath, ~resPath, ~navLinks) => {
                     {
                       navLinks
                         ->Belt.Array.mapWithIndex((id, (_, href, rel, target, aClass, backup)) => 
-                            <NavItemErr backup aClass href id rel liClass={selectedState - id == 0 ? "selected" : ""} target handleClick key=href/>)
+                            <NavItemErr backup aClass href id rel liClass={selectedState - id == 0 ? "filter-invert-92" : ""} target handleClick key=href/>)
                         ->React.array;
                     }
                     {
@@ -62,7 +62,7 @@ let make = (~picPath, ~resPath, ~navLinks) => {
                             id=4
                             handleClick
                             rel="noopener noreferrer"
-                            liClass={selectedState - 4 == 0 ? "selected" : ""}
+                            liClass={selectedState - 4 == 0 ? "filter-invert-92" : ""}
                             target="_blank"
                             key=href
                           />;
