@@ -13,6 +13,3 @@ let make = (~link, ~alt, ~off, ~w, ~src) => {
             />
     </a>
 };
-
-// filter: saturate(1.1) drop-shadow(2px 4px 6px #161616);
-//     display: block;

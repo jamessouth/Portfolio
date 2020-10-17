@@ -4,6 +4,11 @@ let filePath = file(Data.paths);
 [@react.component]
 let make = () => {
     <>
+        <Footer
+            picPath=filePath("footPic")
+            resPath=filePath("footRes")
+            navLinks=Data.navLinks
+        />
         <main>
             <About
                 path=filePath("about")
@@ -21,10 +26,5 @@ let make = () => {
                 id="cont"
             />
         </main>
-        <Footer
-            picPath=filePath("footPic")
-            resPath=filePath("footRes")
-            navLinks=Data.navLinks
-        />
     </>
 };

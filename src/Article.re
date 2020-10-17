@@ -6,6 +6,7 @@ let make = (~link, ~title, ~src, ~alt, ~obPos) => {
             <a
                 rel="noopener noreferrer"
                 href=link
+                className="block focus:filter-article hover:filter-article"
             >
                 <img
                     className="object-none h-56 w-full"

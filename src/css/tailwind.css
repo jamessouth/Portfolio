@@ -102,6 +102,11 @@
             filter: invert(.92);
         }
     }
+    @variants focus, hover{
+        .filter-article{
+            filter: saturate(1.2) drop-shadow(0px 4px 6px #161616);
+        }
+    }
     @responsive{
         .newwindow::after{
             content: '';
