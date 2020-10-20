@@ -30,7 +30,7 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
             />
         </div>
         <div className="w-1/2 portrait:w-auto">
-            <h3 className="text-center my-12 capitalize font-cinz text-3xl">title->React.string</h3>
+            <h3 className="w-11/12 text-center my-12 mx-auto capitalize font-cinz text-3xl">title->React.string</h3>
             <p className="font-gara text-xl mx-auto mb-10 w-4/5">text->React.string</p>
             <div className="mb-10 flex justify-evenly">
               <a className="w-20 font-cinz text-lg border border-eerie-black rounded-full px-2 py-2 text-center hover:bg-eerie-black hover:text-white focus:bg-eerie-black focus:text-white" rel="noopener noreferrer" href=code ariaLabel=codeAria>"code"->React.string</a>
