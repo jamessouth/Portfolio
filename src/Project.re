@@ -1,15 +1,15 @@
+let flexDir = (index) => {
+  switch (index mod 2) {
+  | 0 => ""
+  | _ => "flex-row-reverse"
+  }
+};
+
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
     let visState = Hook.useVisible(title);
 
     let picState = Hook.useFetch(visState, path);
-
-    let flexDir = (index) => {
-      switch (index mod 2) {
-      | 0 => ""
-      | _ => "flex-row-reverse"
-      }
-    };
 
     <section id=title
       className={
