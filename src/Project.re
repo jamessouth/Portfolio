@@ -5,6 +5,8 @@ let flexDir = (index) => {
   }
 };
 
+let baseClass = "h-full object-cover w-full ";
+
 [@react.component]
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
     let visState = Hook.useVisible(title);
@@ -19,13 +21,15 @@ let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, 
         <div className="bg-img-bg portrait:h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
             <img
                 src={switch (picState) {
-                      | Error(_)
-                      | LoadingImg => ""
-                      | LoadedImg(src) => src
+                     | Error(_)
+                     | LoadingImg => ""
+                     | LoadedImg(src) => src
                 }}
-                className={
-                  "h-full object-cover w-full " ++ "object-" ++ obPos
-                }
+                className={switch (obPos) {
+                           | "center" => baseClass ++ "object-center"
+                           | "right" => baseClass ++ "object-right"
+                           | _ => baseClass ++ "object-left"
+                }}
                 alt
             />
         </div>

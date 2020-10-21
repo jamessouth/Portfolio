@@ -17,12 +17,6 @@ module.exports = {
                 'corm': '"Cormorant SC", serif',
                 'forum': 'Forum, cursive',
                 'gara': 'EB Garamond, serif',
-                // 'rob': 'Roboto Mono, monospace',
-            },
-            fontSize: {
-                // 'hdr': '1.3rem',
-                // 'first-letter': '5rem',
-                // 'first-letter-big': '7rem',
             },
             height: {
                 'half-screen': '50vh',
@@ -31,16 +25,9 @@ module.exports = {
                 'artw': '16rem',
                 'cont': '2000px',
             },
-            // objectPosition: {
-            //     'port': '0px',
-            //     'art': '-39px',
-            //     'cont': '-78px',
-            // },
             spacing: {
-                // 'first-letter': '2.65rem',
                 'iconw': '39px',
                 'iconh': '37px',
-                // 'cardw': '20rem',
                 'cw-lg': '25rem',
             },
             screens: {
