@@ -4,10 +4,11 @@
   "scripts": {
     "start": "npm run watch:css && bsb -make-world -w -ws _ ",
     "server": "moduleserve ./ --port 3333",
-    "build": "bsb -make-world",
-    "clean": "bsb -clean-world",
+    "build": "npm run clean && bsb -make-world && npm run build:css && parcel build ./index.html -d docs --no-source-maps",
+    "clean": "bsb -clean-world && rm -rf docs",
     "test": "jest --collectCoverage",
-    "watch:css": "postcss ./src/css/tailwind.css -o ./src/css/main.css"
+    "watch:css": "postcss ./src/css/tailwind.css -o ./src/css/main.css",
+    "build:css": "postcss ./src/css/tailwind.css -o ./src/css/main.css --env 'production'"
   },
   "keywords": [
     "BuckleScript",
@@ -33,6 +34,8 @@
     "bs-react-testing-library": "^0.7.3",
     "jest": "^26.5.2",
     "moduleserve": "^0.9.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-simple-asset-copier": "^1.0.2",
     "postcss-cli": "^7.1.2",
     "tailwindcss": "^1.8.10"
   },
