@@ -26,17 +26,6 @@ let projects: array(Types.project) = [|
     codeAria: "code for clean tablet project",
   },
   {
-    title: "time zones",
-    obPos: "left",
-    path: "./assets/time.jpg",
-    text: "Time Zones displays the locations and flags in a selected time zone, or the zone or zones covering a selected place. I seeded a MongoDB with a series of Node.js streams from the source table on Wikipedia, then wrote scripts to update the documents with the flag URLs, download the flag images as base64, and overwrite the URLs with the base64-encoded flags. I wrote a GraphQL API to interface with the database and return the results of the user's query to the React frontend. It is also live on Heroku!",
-    live: Some("http://timezones.herokuapp.com/"),
-    code: "https://github.com/jamessouth/timezones",
-    alt: "list of countries in a time zone",
-    liveAria: "live site for timezones project",
-    codeAria: "code for timezones project",
-  },
-  {
     title: "portfolio",
     obPos: "left",
     path: "./assets/port.jpg",
