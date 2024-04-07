@@ -7,6 +7,9 @@ yarn-error.log*
 lerna-debug.log*
 
 # reason, bs
+dist-ssr
+*.local
+/lib/
 .DS_Store
 .merlin
 .bsb.lock
