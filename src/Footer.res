@@ -1,4 +1,4 @@
-[@react.component]
+@react.component
 let make = (~picPath, ~resPath, ~navLinks) => {
     let (selectedState, setSelectedState) = React.useState(() => -1);
     let picState = Hook.useFetch(true, picPath);

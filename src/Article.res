@@ -1,4 +1,4 @@
-[@react.component]
+@react.component
 let make = (~link, ~title, ~src, ~alt, ~obPos) => {
 
     <div className="w-11/12 max-w-artw mx-auto wdk1:max-w-none md:flex md:items-center md:mb-8">

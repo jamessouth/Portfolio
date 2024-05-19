@@ -1,8 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* @tailwind base;
 @layer base{
     *{
         @apply text-eerie-black;
@@ -66,4 +62,4 @@
             margin-left: 2px;
         }
     }
-} */
+}

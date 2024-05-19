@@ -7,7 +7,7 @@ let flexDir = (index) => {
 
 let baseClass = "h-full object-cover w-full ";
 
-[@react.component]
+@react.component
 let make = (~title, ~live, ~code, ~alt, ~text, ~liveAria, ~codeAria, ~path, ~i, ~obPos) => {
     let visState = Hook.useVisible(title);
 

@@ -1,4 +1,4 @@
-[@react.component]
+@react.component
 let make = (~path, ~id) => {
     let visState = Hook.useVisible(id);
 
