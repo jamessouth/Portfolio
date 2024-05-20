@@ -3,3 +3,9 @@
 ### ReasonML, ReasonReact, Tailwind CSS
 
 My top projects, résumé, articles, and contacts/online accounts. Built with ReasonML, ReasonReact, and Tailwind CSS. Compiled with BuckleScript, tested with `jest` and `react-testing-library`, bundled with Parcel.
+
+### Fast Refresh & ReScript
+
+Make sure to create interface files (`.resi`) for each `*.res` file.
+
+Fast Refresh requires you to **only export React components**, and it's easy to unintenionally export other values that will disable Fast Refresh (you will see a message in the browser console whenever this happens).

@@ -1,10 +1,11 @@
-%%raw("import './tailwind.css'")
+%%raw("import './index.css'")
 
-ReactDOM.querySelector("#root")
-->Option.getExn
-->ReactDOM.Client.createRoot
-->ReactDOM.Client.Root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+switch ReactDOM.querySelector("#root") {
+| Some(domElement) =>
+  ReactDOM.Client.createRoot(domElement)->ReactDOM.Client.Root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  )
+| None => ()
+}
