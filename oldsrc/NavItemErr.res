@@ -11,7 +11,7 @@ let make = (
     ) => {
         <li className={"focus-within:filter-invert-92 hover:filter-invert-92 " ++ liClass}>
             <a
-                className={"text-3xl text-white " ++ aClass}
+                className={"text-3xl text-zinc-100 " ++ aClass}
                 href
                 rel
                 target

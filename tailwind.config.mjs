@@ -4,20 +4,16 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        clean: 'url(/clean.jpg)',
+        about: "url('/about.jpg')",
+        clean: "url('/clean.jpg')",
+        port: "url('/port.jpg')",
         pe: "url('https://projecteuler.net/profile/jamessouth.png')",
         cw: "url('https://www.codewars.com/users/jamessouth/badges/micro')",
         'cw-lg':
           "url('https://www.codewars.com/users/jamessouth/badges/large')",
       },
-      //   backgroundImage: {
-      //     "entry_mob_wide":"url(/entryMobWide.jpg)",
-      //     "entry_mob_tall":"url(/entryMobTall.jpg)"
-      //   }
       colors: {
         'dark-blue': '#405d82',
-        'eerie-black': '#161616',
-        'img-bg': '#e2e2e2',
       },
       fontFamily: {
         cinz: 'Cinzel, serif',
@@ -38,12 +34,6 @@ export default {
         'cw-lg': '25rem',
       },
       screens: {
-        portrait: {
-          raw: '(orientation: portrait)',
-        },
-        landscape500: {
-          raw: '(orientation: landscape) and (min-height: 500px)',
-        },
         wdk1: '440px',
       },
     },

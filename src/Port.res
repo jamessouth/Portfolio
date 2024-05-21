@@ -1,15 +1,15 @@
 @react.component
 let make = (~projects) => {
   <section id="port">
-    <h2
-      className="font-forum text-5xl px-0 py-12 portrait:mb-16 text-center tracking-wider border-solid border-eerie-black border-t border-b">
+    <h2 className="font-forum text-5xl px-0 py-12 mb-16 text-center tracking-wider">
       {"PORTFOLIO"->React.string}
     </h2>
     {projects
-    ->Belt.Array.mapWithIndex((i, {Data.title: title, live, code, text, liveAria, codeAria}) =>
-      <Project title live code text liveAria codeAria i key=title />
-    )
+    ->Belt.Array.mapWithIndex((
+      i,
+      {Data.title: title, live, code, text, liveAria, codeAria, path},
+    ) => <Project title live code text liveAria codeAria i key=title path />)
     ->React.array}
   </section>
 }
-//  alt obPos
+//  alt obPos  className="mx-px"

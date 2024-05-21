@@ -2,8 +2,8 @@
 let make = () => {
   // let picState = Hook.useFetch(true, path);~path
 
-  <section className="flex flex-row-reverse portrait:flex-col min-h-screen" id="about">
-    <div className="bg-img-bg portrait:h-half-screen wdk1:h-auto w-1/2 portrait:w-auto">
+  <section className="flex flex-row-reverse  min-h-screen" id="about">
+    <div className="bg-zinc-100 wdk1:h-auto w-1/2 ">
       <img
         src={switch picState {
         | Error(_)
@@ -14,7 +14,7 @@ let make = () => {
         alt="a web dev's desk and laptop"
       />
     </div>
-    <div className="w-1/2 portrait:w-auto">
+    <div className="w-1/2 ">
       <h1 className="my-20 font-bold font-corm text-center text-4xl md:text-5xl lg:text-6xl">
         React.string
         "James South"
