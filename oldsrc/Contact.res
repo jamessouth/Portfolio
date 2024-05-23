@@ -8,7 +8,7 @@ let make = (~links: array(Types.contact), ~path, ~id) => {
         <h2 className="font-forum text-5xl px-0 py-12 text-center tracking-wider border-solid border-neutral-900 border-t border-b">
           "CONTACT"->React.string
         </h2>
-        <div className="flex flex-row justify-around items-center flex-wrap my-16 xl:mx-auto max-w-cont">
+        <div className="flex flex-row justify-around items-center flex-wrap my-16 xl:mx-auto">
             {switch (picState) {
               | LoadingImg => React.null
               | LoadedImg(src) =>

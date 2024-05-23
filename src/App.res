@@ -6,18 +6,7 @@ let make = () => {
   <>
     // <Footer picPath={filePath("footPic")} resPath={filePath("footRes")} navLinks=Data.navLinks />
     <main>
-      //   <About path={filePath("about")} />
-      <Project
-        title="james south"
-        live=None
-        code=""
-        text="hi"
-        liveAria=""
-        codeAria=""
-        i=1
-        key="james south"
-        path="bg-about"
-      />
+      <About />
       <Port projects=Data.projects />
       //   <Articles path={filePath("articles")} id="articles" />
       //   <Contact links=Data.links path={filePath("contact")} id="cont" />

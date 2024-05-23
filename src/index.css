@@ -21,9 +21,9 @@
     @apply italic;
   }
   #about p::first-letter {
-    color: #e68621;
+    color: #a56a20;
     margin-top: -2.65rem;
-    @apply font-corm text-6xl font-bold -mb-8 mr-2 float-left;
+    @apply font-corm text-6xl font-bold -mb-8 mr-2;
   }
   @screen lg {
     #about p::first-letter {

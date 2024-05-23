@@ -24,17 +24,14 @@ export default {
       height: {
         'half-screen': '50vh',
       },
-      maxWidth: {
-        artw: '16rem',
-        cont: '2000px',
+      screens: {
+        mw500: '500px',
+        mw560: '560px',
       },
       spacing: {
         iconw: '39px',
         iconh: '37px',
         'cw-lg': '25rem',
-      },
-      screens: {
-        wdk1: '440px',
       },
     },
   },
