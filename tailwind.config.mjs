@@ -14,6 +14,7 @@ export default {
       },
       colors: {
         'dark-blue': '#405d82',
+        orange: '#a56a20',
       },
       fontFamily: {
         cinz: 'Cinzel, serif',
@@ -25,8 +26,9 @@ export default {
         'half-screen': '50vh',
       },
       screens: {
-        mw500: '500px',
-        mw560: '560px',
+        mw368: '368px',
+        mw400: '400px',
+        mw448: '448px',
       },
       spacing: {
         iconw: '39px',

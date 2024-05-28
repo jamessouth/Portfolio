@@ -20,7 +20,7 @@
   cite {
     @apply italic;
   }
-  #about p::first-letter {
+  /* #about p::first-letter {
     color: #a56a20;
     margin-top: -2.65rem;
     @apply font-corm text-6xl font-bold -mb-8 mr-2;
@@ -31,7 +31,7 @@
       font-size: 7rem;
       @apply -mb-16;
     }
-  }
+  } */
 }
 @tailwind components;
 @layer components {
