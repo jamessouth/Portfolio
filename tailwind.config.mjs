@@ -6,7 +6,11 @@ export default {
       backgroundImage: {
         about: "url('/about.jpg')",
         clean: "url('/clean.jpg')",
+        dash: "url('/dash.jpg')",
+        dir: "url('/dir.jpg')",
+        face: "url('/face.jpg')",
         port: "url('/port.jpg')",
+        puzz: "url('/puzz.jpg')",
         pe: "url('https://projecteuler.net/profile/jamessouth.png')",
         cw: "url('https://www.codewars.com/users/jamessouth/badges/micro')",
         'cw-lg':
