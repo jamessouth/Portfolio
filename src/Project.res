@@ -1,7 +1,7 @@
 let flexDir = index => {
   switch mod(index, 2) {
-  | 0 => ""
-  | _ => "flex-row-reverse"
+  | 0 => "md:flex-row"
+  | _ => "md:flex-row-reverse"
   }
 }
 
@@ -23,9 +23,9 @@ let make = (~title, ~live, ~code, ~text, ~liveAria, ~codeAria, ~i, ~path) => {
     id=title className={flexDir(i) ++ " flex flex-col border-solid border-neutral-900 border-t"}>
     <div
       className={borderSide(i) ++
-      `${path} border-solid border-neutral-900 bg-contain bg-no-repeat bg-center h-80`}
+      `${path} border-solid border-neutral-900 md:w-1/2 bg-contain bg-no-repeat bg-center h-80 md:h-[initial]`}
     />
-    <div className={borderSide(i + 1) ++ "border-solid border-neutral-900 "}>
+    <div className={borderSide(i + 1) ++ "border-solid md:w-1/2 border-neutral-900 "}>
       <h3 className="w-11/12 text-center my-12 mx-auto capitalize font-cinz text-3xl">
         {title->React.string}
       </h3>
