@@ -9,6 +9,7 @@ export default {
         dash: "url('/dash.jpg')",
         dir: "url('/dir.jpg')",
         face: "url('/face.jpg')",
+        poly: "url('/poly.jpg')",
         port: "url('/port.jpg')",
         puzz: "url('/puzz.jpg')",
         pe: "url('https://projecteuler.net/profile/jamessouth.png')",

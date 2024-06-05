@@ -85,6 +85,15 @@ let projects = [
     liveAria: "",
     codeAria: "code for face scramble project",
   },
+  {
+    title: "polybar modules",
+    live: None,
+    code: "https://github.com/jamessouth?tab=repositories&q=polybar",
+    path: "bg-poly",
+    text: "",
+    liveAria: "",
+    codeAria: "list of polybar projects",
+  },
 ]
 
 let links = [
