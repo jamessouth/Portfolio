@@ -90,7 +90,7 @@ let projects = [
     live: None,
     code: "https://github.com/jamessouth?tab=repositories&q=polybar",
     path: "bg-poly",
-    text: "",
+    text: "These four projects are custom modules that I made for Polybar, a popular Linux status bar package. Polybar-nightlight is a shell script that provides a blue light filter. Polybar-time-bar is also a shell script, with some Go, that provides a progress bar. Polybar-binary-clock-fonts (pictured) is a set of fonts I made that display numbers with dots like on a binary clock. Polybar-fibonacci-clock (in progress) is an OCaml program that creates a type of clock.",
     liveAria: "",
     codeAria: "list of polybar projects",
   },
